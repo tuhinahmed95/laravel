@@ -6,14 +6,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/post {id}', function (string $id) {
-    
+
+Route::get('/post{id?}/comment{commentid}', function (string $id =null, string $comment = null) {
     if($id){ 
-         return "<h1>Post Id :". $id ." </h1>";
+         return "<h1>Post Id : ". $id ."</h1> <h2>". $comment ."</h2>";
     }else{ 
-        return "<h1>No Id Found</h1>";
+        return "<h1>Not Found Id</h1>";
     }
 });
+
+
 
 // Route::view('post','/post');
 
