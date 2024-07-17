@@ -1,3 +1,4 @@
-<h1>Our First Page</h1>
+<h1>Our Home Page</h1>
 
-<a href="/post">post page</a>
+<a href="/firstpost">firtpage</a> <br>
+<a href="">Post</a>
