@@ -10,5 +10,9 @@ Route::get('/', function () {
 //     return view('post');
 // });
 
-Route::view('post','/post');
+// Route::view('post','/post');
+
+Route::get('/post/firstpost', function () {
+    return view('firstpost');
+});
 
