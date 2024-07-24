@@ -2,3 +2,4 @@
 
 <a href="/">About</a>
 <a href="{{ route('mypost') }}">Post</a>
+<a href="{{ route('mypost') }}">Post</a>
