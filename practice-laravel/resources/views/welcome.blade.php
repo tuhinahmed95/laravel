@@ -1,4 +1,10 @@
-@include('pages.header',['name' =>'tuhin'])
+@php
+
+    $fruits = ['apple','banana','orange','pineapple']
+
+@endphp
+
+@include('pages.header', ['names' => $fruits])
 
 <h1>Our Home Page</h1>
 
@@ -27,5 +33,4 @@
         
     @endforeach
 </ul>
-@include('pages.footer')
-@include('pages.footer')
+@include('pages.footer', ['name2' => 'Isan Rahman'])
