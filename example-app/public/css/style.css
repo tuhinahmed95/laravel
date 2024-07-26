@@ -1,3 +1,20 @@
-.header{ 
+.navbar{ 
+    width: 100%;
+    display: flex;
     background-color: aqua;
+}
+.navbar a { 
+    text-decoration: none;
+    padding: 10px;
+
+}
+footer{ 
+    background-color: cadetblue;
+    color: wheat;
+}
+.tuhin{ 
+    width: 100%;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 20px;
 }
