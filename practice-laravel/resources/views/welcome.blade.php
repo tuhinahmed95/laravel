@@ -1,10 +1,10 @@
 @php
 
-    $fruits = ['apple','banana','orange','pineapple']
+    $fruits = []
 
 @endphp
 
-@include('pages.header', ['names' => $fruits])
+@include('pages.header',['fruitsname'=> $fruits] )
 
 <h1>Our Home Page</h1>
 
