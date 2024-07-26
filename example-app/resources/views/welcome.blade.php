@@ -8,3 +8,21 @@
 @section('title')
     Home
 @endsection
+
+@push('scripts')
+    <script src="/example.js"></script>
+    <script src="/jquery.js"></script>
+    <script src="/bootstrap.js"></script>
+@endpush
+
+@push('style')
+    <link rel="stylesheet" href="css/bootstrap.css">
+@endpush
+
+@prepend('style')
+    <style> 
+        main{ 
+            background-color: tan
+        }
+    </style>
+@endprepend

@@ -15,3 +15,22 @@ Route::get('/about', function () {
 Route::get('/post', function () {
     return view('post');
 });
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+Route::get('/users', function () {
+    // $city = "Gaibandha";
+    $names = [ 
+        1=>['name'=>'Tuhin',   'phone' => '01765765',  'address'=>'Gaibandha'],
+        1=>['name'=>'Sunnah',  'phone' => '01765564', 'address'=>'Mymensing'],
+        2=>['name'=>'Rafia',   'Phone'=>'879997667',   'address'=>'Gaibandha'],
+        3=>['name'=>'Fariha',  'Phone'=>'98098766',   'Address'=>'Dhaka'],
+        4=>['name'=>'Anika',   'phone'=>'686897663',   'Address'=>'Sylhet'],
+
+    ];
+    // return view('users',['passdata' => 'Tuhin Ahmed', 'address'=>$city]);
+    return view('users', ['user'=>$names]);
+
+});

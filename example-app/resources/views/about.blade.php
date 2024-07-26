@@ -2,10 +2,29 @@
 
 @section('content')
     <h1>About Page</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium dignissimos accusamus iusto reiciendis impedit optio odio voluptatibus recusandae dolor incidunt suscipit sapiente qui, autem vitae exercitationem cumque. Facilis, dignissimos.</p>
-    
+@verbatim
+
+<div id="app">{{ message }}</div>       
+@endverbatim
+
 @endsection
 
 @section('title')
     About 
 @endsection
+
+@push('scripts')
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const message = ref('Hello vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+@endpush

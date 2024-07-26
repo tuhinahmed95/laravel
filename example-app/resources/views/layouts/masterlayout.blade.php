@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document - @yield('title','website')</title>
     <link rel="stylesheet" href="css/style.css">
+    @stack('style')
 </head>
 <body>
     <div class="tuhin"> Tuhin</div>
@@ -13,6 +14,7 @@
             <a href="/">home</a>
             <a href="/about">About</a>
             <a href="/post">Post</a>
+            <a href="/users">Users</a>
     
     </div>
     
@@ -28,5 +30,7 @@
     <footer> 
         this is footer
     </footer>
+
+    @stack('scripts')
 </body>
 </html>
