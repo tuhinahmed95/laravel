@@ -1,8 +1,7 @@
-@include('pages.header', ['name' => 'tuhin'])
+@include('pages.header')
 <h1>Home Page</h1>
-
-@php
-    $fruits = ['mango','pineapple','banana','orange']
-@endphp
-
-@include('pages.footer',['fruit'=> $fruits])
+<a href="">home</a>
+<a href="/about">About</a>
+<a href="/post">Post</a>
+@include('pages.sidebar')
+@include('pages.footer')
