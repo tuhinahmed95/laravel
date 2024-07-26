@@ -1,10 +1,10 @@
 @php
 
-    $fruits = []
-
+    $fruits = ['one' => 'apple', 'two' =>'banana', 'theree'=>'orange', 'four'=>'pineapple']
+    $value = "";
 @endphp
 
-@include('pages.header',['fruitsname'=> $fruits] )
+@includeUnless(empty($value),'pages.header',['fruitsname'=> $fruits] )
 
 <h1>Our Home Page</h1>
 
@@ -34,3 +34,4 @@
     @endforeach
 </ul>
 @include('pages.footer', ['name2' => 'Isan Rahman'])
+@includeif('pages.content')

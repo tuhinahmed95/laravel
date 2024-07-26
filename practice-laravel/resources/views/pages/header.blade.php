@@ -1,9 +1,9 @@
 <h1>Header Page</h1>
 
-@foreach ($fruitsname as $key => $value )
+{{-- @foreach ($fruitsname as $key => $value )
         <p>{{$key}} - {{$value}}</p>
     
-@endforeach
+@endforeach --}}
 
 @forelse ( $fruitsname as $key => $value )
         <p>{{$key}} - {{$value}}</p>
