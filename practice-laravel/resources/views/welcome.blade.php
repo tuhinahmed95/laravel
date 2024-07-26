@@ -1,4 +1,7 @@
+@include('pages.header',['name' =>'tuhin'])
+
 <h1>Our Home Page</h1>
+
 
 <a href="/firstpost">firtpage</a> <br>
 <a href="">Post</a> <br><br>
@@ -24,3 +27,5 @@
         
     @endforeach
 </ul>
+@include('pages.footer')
+@include('pages.footer')
