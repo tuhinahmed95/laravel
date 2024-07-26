@@ -15,6 +15,7 @@
             <a href="/about">About</a>
             <a href="/post">Post</a>
             <a href="/users">Users</a>
+            <a href="/user">User</a>
     
     </div>
     
