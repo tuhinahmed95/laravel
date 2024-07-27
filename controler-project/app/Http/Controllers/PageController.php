@@ -10,7 +10,11 @@ class PageController extends Controller
         return view('welcome');
     }
 
-    public function showUser(){ 
-        return view('user');
+    public function showUser(string $id){ 
+        return view('user',['data'=> $id]);
+    }
+
+    public function showBlog(){ 
+        return view('/blog');
     }
 }
