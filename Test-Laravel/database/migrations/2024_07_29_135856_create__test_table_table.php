@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('TestTable', function (Blueprint $table) {
-            //
+            $table->id();
+            $table->longText('note');
+            $table->foreignId('user_id')->constrained('users');
+            $table->timestamps();
         });
     }
 
