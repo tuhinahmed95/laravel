@@ -2,11 +2,11 @@
 ----- table make in db -------
 
 *** php artisan make:migration create_students_table .
-*** php artisan migrate = table create succesfully .
-*** php artisan migrate:rollback = this command use for delete table in db .
+*** php artisan migrate => table create succesfully .
+*** php artisan migrate:rollback => this command use for delete table in db .
 *** php artisan migrate => this comman use for crete delete table .
 *** php artisan migrate:refresh/fresh =>this command use for previous command exit and newly run every table.
-*** php artisan migrate:reset => this command use for every table delete .php artisan migrate =>this command use for recreate every table and column.
+*** php artisan migrate:reset => this command use for every table delete/rollback every table .php artisan migrate =>this command use for recreate every table and column.
 *** php artisan make:migration update_students_table --table=students =>this command use for table column name update or column delete.
 
 ----- Column rename or delete column and table rename----
@@ -19,8 +19,23 @@
 *** $table->drop('table name'); ->this is use for table delete .
 *** schema::dropIfExist('table name'); this is check this table name and delete this table .
 
------ create model ------
+----- create model And seeder And factory------
 
-*** php artisan make:model Task -m =>this command user for create model and migration .
+*** php artisan make:model Task -m =>this command use for create model and migration .
+*** php artisan make:model ModelName => this command is use for create model .
+
+		--- seeder ---
+*** phh artisan make:seeder SeederName => this command is use for create seeder .
+*** php artisan db:seed =>this command is use for run seeder file .
+*** php artisan migrate:fresh --seed =>this command is use for delete previous data and create new data in a table .
+*** php artisan db:seed --clas=UserSeeder =>this command is use for spacific seeder run .
+*** php artisan db:seed --clas=UserSeeder =>this command is use for spacific seeder run forcely.
+
+		--- factory ---
+*** php artisan make:factory StudentFactory => this command is use for create a factory .
+*** student::factory()->count()->create(); =>this is use for fac data create .
+*** php artisan migrate:fresh --seed => this command is use for delete previous data and create new data .
+*** php artisan make:factory StudentFactory --model=Student => this command is use for create first factory and then model .
+*** php artisan make:model Student-f => this command is use for create first model and then factory .
 
 
