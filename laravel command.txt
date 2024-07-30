@@ -6,6 +6,17 @@
 *** php artisan migrate:rollback = this command use for delete table in db .
 *** php artisan migrate => this comman use for crete delete table .
 *** php artisan migrate:refresh/fresh =>this command use for previous command exit and newly run every table.
-*** php artisan migrate:reset => this command use for every table delete .
+*** php artisan migrate:reset => this command use for every table delete .php artisan migrate =>this command use for recreate every table and column.
+*** php artisan make:migration update_students_table --table=students =>this command use for table column name update or column delete.
+
+----- Column rename or delete column ----
+*** $table->renameColumn('col name', 'update col name'); =>this is use for column rename .
+*** $table->dropColumnd ('col name'); => this is use for delete column .
+*** $table->dropColumnd ('col name','col name','col name'); => this is use for multiple column delete.
+*** $table->string('name',50)->change(); =>this is use for change length .
+
+----- create model ------
+
+*** php artisan make:model Task -m =>this command user for create model and migration .
 
 
