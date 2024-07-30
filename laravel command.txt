@@ -1,5 +1,11 @@
 
 ----- table make in db -------
 
-*** php artisan make:migration create_students_table 
+*** php artisan make:migration create_students_table .
 *** php artisan migrate = table create succesfully .
+*** php artisan migrate:rollback = this command use for delete table in db .
+*** php artisan migrate => this comman use for crete delete table .
+*** php artisan migrate:refresh/fresh =>this command use for previous command exit and newly run every table.
+*** php artisan migrate:reset => this command use for every table delete .
+
+
