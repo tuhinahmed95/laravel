@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-            // $table->renameColumn('city', 'cities');
-            $table->dropColumn('percentage');
-            
+        Schema::table('libraries', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
         });
     }
 
@@ -27,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
+        Schema::table('libraries', function (Blueprint $table) {
             //
         });
     }
