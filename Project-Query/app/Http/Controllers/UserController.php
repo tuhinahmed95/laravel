@@ -3,8 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    //
+    public function showUsers(){ 
+        $users = DB::table('users')->get();
+        // return $users;
+        // dd($users);
+        // dump($users);
+        // foreach($users as $user){ 
+        //     echo $user->name . "<br>";
+        // }
+        return view('allusers', ['data'=> $users]);
+    }
 }
