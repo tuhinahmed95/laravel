@@ -16,5 +16,35 @@
          "email" : "farzana@gmail.com",
          "age"   : 21,
          "city"  : "Faridpur"
+    },
+    { 
+        "name" : "Salman Khan",
+         "email" : "salmankhan@gmail.com",
+         "age"   : 15,
+         "city"  : "Mumbai"
+    },
+    { 
+        "name" : "Shahrukh Khan",
+         "email" : "shahrukhkahn@gmail.com",
+         "age"   : 18,
+         "city"  : "Delli"
+    },
+    { 
+        "name" : "Amir Khan",
+         "email" : "amirkhan@gmail.com",
+         "age"   : 19,
+         "city"  : "Mumbai Bandra"
+    },
+    { 
+        "name" : "Probhas",
+         "email" : "probhas@gmail.com",
+         "age"   : 17,
+         "city"  : "Hydrabad"
+    },
+    { 
+        "name" : "Depika Padukone",
+         "email" : "depika@gmail.com",
+         "age"   : 22,
+         "city"  : "Pune"
     }
 ]
