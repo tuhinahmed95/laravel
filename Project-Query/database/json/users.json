@@ -1,0 +1,20 @@
+[ 
+    { 
+         "name" : "Tuhin",
+         "email" : "mtuhinahmded@gmail.com",
+         "age"   : 25,
+         "city"  : "Gaibandha"
+    },
+    { 
+        "name" : "Rafia",
+         "email" : "rafia@gmail.com",
+         "age"   : 20,
+         "city"  : "Mymensing"
+    },
+    { 
+        "name" : "Farzana",
+         "email" : "farzana@gmail.com",
+         "age"   : 21,
+         "city"  : "Faridpur"
+    }
+]
