@@ -9,3 +9,4 @@ use App\Http\Controllers\UserController;
 // });
 Route::get('/', [UserController::class, 'showUsers'])->name('user');
 Route::get('/users/{id}', [UserController::class, 'singleUsers'])->name('view.user');
+Route::get('/adduser', [UserController::class, 'addUser'])->name('adduser');
