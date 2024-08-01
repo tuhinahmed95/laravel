@@ -24,17 +24,17 @@ class UserController extends Controller
     }
     public function addUser(){ 
         $user = DB::table('users')
-                    ->insert(
+                    ->insert([
                         [
-                            'name'   => 'Mamun',
-                            'email'  => 'mamun@gmail.com',
+                            'name'   => 'Fima',
+                            'email'  => 'fima@gmail.com',
                             'age'    => 30,
                             'city'   => 'Sherpur',
                             
                         ],
                         [
-                            'name'   => 'Mamun',
-                            'email'  => 'mamun@gmail.com',
+                            'name'   => 'Shekul Islam',
+                            'email'  => 'shekul@gmail.com',
                             'age'    => 30,
                             'city'   => 'Gajipur',
                             
@@ -53,7 +53,7 @@ class UserController extends Controller
                             'city'   => 'Rajshai',
                             
                         ],
-                     
+                    ]
                     );
             return $user;
         // return view('adduser', ['add' =>$user]); 
