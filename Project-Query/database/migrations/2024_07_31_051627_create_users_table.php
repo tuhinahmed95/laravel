@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->integer('age');
             $table->string('city');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
