@@ -24,15 +24,35 @@ class UserController extends Controller
     }
     public function addUser(){ 
         $user = DB::table('users')
-                    ->insertGetId(
+                    ->insert(
                         [
-                            'name'   => 'Shahin Molla',
-                            'email'  => 'sahen@gmail.com',
-                            'age'    => 39,
-                            'city'   => 'faridpur',
+                            'name'   => 'Mamun',
+                            'email'  => 'mamun@gmail.com',
+                            'age'    => 30,
+                            'city'   => 'Sherpur',
                             
                         ],
-                        
+                        [
+                            'name'   => 'Mamun',
+                            'email'  => 'mamun@gmail.com',
+                            'age'    => 30,
+                            'city'   => 'Gajipur',
+                            
+                        ],
+                        [
+                            'name'   => 'Shakil',
+                            'email'  => 'shakil@gmail.com',
+                            'age'    => 30,
+                            'city'   => 'Jamalpur',
+                            
+                        ],
+                        [
+                            'name'   => 'Rayhan',
+                            'email'  => 'rayraju@gmail.com',
+                            'age'    => 35,
+                            'city'   => 'Rajshai',
+                            
+                        ],
                      
                     );
             return $user;
@@ -45,11 +65,34 @@ class UserController extends Controller
     }
     public function updateUser(){ 
         $user = DB::table('users')
-                    ->where('id',1)
-                    ->update([ 
-                        'city'=> 'Dhaka'
-                    ]);
+                    ->where('id',3)
+                    // ->update(
+                    //     [ 
+                    //     'name' => 'Farazana Epa Faizu',
+                    //     'age'  => 27,
+                    //     'city' => 'Faridpur Vanga'
+                    // ]
+                    // ->increment('age', 2);
+                    ->decrement('age', 2,['city'=>'Dhaka']);
+                
+        if($user){ 
+            echo "<h1>Data Update Successfully</h1>";
+        }            
     }
+    public function deleteUser(string $id){ 
+        $user = DB::table('users')
+                    ->where('id',$id)
+                    ->delete();
+        if($user){
+            return redirect()->route('home');
+        }
+    }
+    public function deleteAllUser(){ 
+        $users = DB::table('users')->truncate();
+
+    }
+    
+  
 
   
 
