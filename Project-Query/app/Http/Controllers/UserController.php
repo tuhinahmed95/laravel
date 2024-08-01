@@ -41,24 +41,26 @@ class UserController extends Controller
            }        
     }
     public function updatePage(string $id){ 
-        $user = DB::table('users')->where('id',$id)->get();
-        // $user = DB::table('users')->find($id);
-        return view('updateuser', ['updatedata'=>$user]);
+        $user = DB::table('users')->find($id);
+        return view('updateuser', ['data' => $user]);
     }
-    public function updateUser(){ 
+
+    
+    public function updateUser(Request $req, $id){ 
         $user = DB::table('users')
-                    ->where('id',3)
-                    // ->update(
-                    //     [ 
-                    //     'name' => 'Farazana Epa Faizu',
-                    //     'age'  => 27,
-                    //     'city' => 'Faridpur Vanga'
-                    // ]
+                    ->where('id',$id)
+                    ->update(
+                        [ 
+                            'name'   =>  $req -> username,
+                            'email'  =>  $req -> useremail,
+                            'age'    =>  $req -> userage,
+                            'city'   =>  $req -> usercity,
+                        ]);
                     // ->increment('age', 2);
-                    ->decrement('age', 2,['city'=>'Dhaka']);
+                    // ->decrement('age', 2,['city'=>'Dhaka']);
                 
         if($user){ 
-            echo "<h1>Data Update Successfully</h1>";
+            return redirect()->route('home');
         }            
     }
     public function deleteUser(string $id){ 
