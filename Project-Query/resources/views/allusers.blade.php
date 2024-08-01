@@ -12,7 +12,7 @@
         <div class="row"> 
             <div class="col-6"> 
                 <h1>Al Users List</h1>
-                <a href="" class="btn btn-success btn-sm mb-3">Add New</a>
+                <a href="/newuser" class="btn btn-success btn-sm mb-3">Add New</a>
 
                 <table class="table table-borderd table-striped">
                 <tr>  
@@ -35,7 +35,7 @@
                         <td>{{$user->city}}</td>
                         <td><a href="{{route('view.user', $user->id)}}" class="btn btn-primary btn-sm">View</a></td>
                         <td><a href="{{route('delete.user', $user->id)}}" class="btn btn-danger btn-sm">Delete</a></td>
-                        <td><a href="{{route('delete.user', $user->id)}}" class="btn btn-warning btn-sm">Update</a></td>
+                        <td><a href="{{route('update.page', $user->id)}}" class="btn btn-warning btn-sm">Update</a></td>
                         
                     </tr>
                     @endforeach

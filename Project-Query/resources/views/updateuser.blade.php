@@ -12,26 +12,26 @@
     <div class="container">
         <div class="row">
             <div class="col-4"> 
-                <h1>Add New User</h1>
-                <form action=" {{route('addUser')}} " method="post"> 
+                <h1>Update User Data</h1>
+                <form action=" {{route('update.user', $updatedata->id)}} " method="post"> 
                     @csrf
                     <div class="mb-3"> 
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="username">
+                        <input type="text" value="{{ $updatedata->name }}" class="form-control" name="username">
                     </div>
                     <div class="mb-3"> 
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" name="useremail">
+                        <input type="text"value="{{ $updatedata->name }}"   class="form-control" name="useremail">
                     </div>
                     <div class="mb-3"> 
                         <label class="form-label">Age</label>
-                        <input type="text" class="form-control" name="userage">
+                        <input type="text" value="{{ $updatedata->name }}"  class="form-control" name="userage">
                     </div>
                     <div class="mb-3"> 
                         <label class="form-label">City</label>
-                        <input type="text" class="form-control" name="usercity">
+                        <input type="text" value="{{ $updatedata->name }}"  class="form-control" name="usercity">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

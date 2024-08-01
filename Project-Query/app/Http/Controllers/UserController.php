@@ -22,46 +22,28 @@ class UserController extends Controller
         $user = DB::table('users')->where('id',$id)->get();
         return view('user',['data' => $user]);
     }
-    public function addUser(){ 
+    public function addUser(Request $req){ 
         $user = DB::table('users')
-                    ->insert([
+                    ->insert(
                         [
-                            'name'   => 'Fima',
-                            'email'  => 'fima@gmail.com',
-                            'age'    => 30,
-                            'city'   => 'Sherpur',
+                            'name'   =>  $req -> username,
+                            'email'  =>  $req -> useremail,
+                            'age'    =>  $req -> userage,
+                            'city'   =>  $req -> usercity,
                             
                         ],
-                        [
-                            'name'   => 'Shekul Islam',
-                            'email'  => 'shekul@gmail.com',
-                            'age'    => 30,
-                            'city'   => 'Gajipur',
-                            
-                        ],
-                        [
-                            'name'   => 'Shakil',
-                            'email'  => 'shakil@gmail.com',
-                            'age'    => 30,
-                            'city'   => 'Jamalpur',
-                            
-                        ],
-                        [
-                            'name'   => 'Rayhan',
-                            'email'  => 'rayraju@gmail.com',
-                            'age'    => 35,
-                            'city'   => 'Rajshai',
-                            
-                        ],
-                    ]
+            
+                    
                     );
-            return $user;
-        // return view('adduser', ['add' =>$user]); 
-    //     if($user){ 
-    //         echo "<h1>Data succesfully Added</h1>";
-    //     }else{ 
-    //         echo "<h1>Data Not Added</h1>";
-    //     }          
+
+           if($user){ 
+            return redirect()->route('home');
+           }        
+    }
+    public function updatePage(string $id){ 
+        $user = DB::table('users')->where('id',$id)->get();
+        // $user = DB::table('users')->find($id);
+        return view('updateuser', ['updatedata'=>$user]);
     }
     public function updateUser(){ 
         $user = DB::table('users')
