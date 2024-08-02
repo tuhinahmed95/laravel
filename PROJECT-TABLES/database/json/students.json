@@ -3,25 +3,25 @@
         "name"  : "Tuhin",
         "email"  : "tuhin@gmail.com",
         "age"  : 29,
-        "city"  : "Gaibandha"
+        "city"  : 1
     },
     { 
         "name"  : "Shaki",
         "email"  : "shakib@gmail.com",
         "age"  : 32,
-        "city"  : "Narail"
+        "city"  : 2
     },
     { 
         "name"  : "Tasrif",
         "email"  : "tasrif@gmail.com",
         "age"  : 27,
-        "city"  : "Bogura"
+        "city"  :3
     },
     { 
         "name"  : "Tanvir",
         "email"  : "tanvir@gmail.com",
         "age"  : 32,
-        "city"  : "Rajshahi"
+        "city"  :4
     }
 
 ]
