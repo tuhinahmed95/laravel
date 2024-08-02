@@ -44,6 +44,10 @@
                 <div class="mt-5"> 
                     {{$data->links('pagination::bootstrap-5')}}
                 </div>
+                <div> 
+                    Total Users :   {{ $data->total() }} <br>
+                    Current Page :   {{ $data->currentPage() }}
+                </div>
             </div>
         </div>
     </div>
