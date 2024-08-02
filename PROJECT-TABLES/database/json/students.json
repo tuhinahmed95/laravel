@@ -1,0 +1,27 @@
+[ 
+    { 
+        "name"  : "Tuhin",
+        "email"  : "tuhin@gmail.com",
+        "age"  : 29,
+        "city"  : "Gaibandha"
+    },
+    { 
+        "name"  : "Shaki",
+        "email"  : "shakib@gmail.com",
+        "age"  : 32,
+        "city"  : "Narail"
+    },
+    { 
+        "name"  : "Tasrif",
+        "email"  : "tasrif@gmail.com",
+        "age"  : 27,
+        "city"  : "Bogura"
+    },
+    { 
+        "name"  : "Tanvir",
+        "email"  : "tanvir@gmail.com",
+        "age"  : 32,
+        "city"  : "Rajshahi"
+    }
+
+]
