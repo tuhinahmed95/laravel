@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use App\Models\lecturer;
+use App\Models\student;
+
 
 class LecturerSeeder extends Seeder
 {
@@ -20,7 +22,7 @@ class LecturerSeeder extends Seeder
         $lecturers = collect(json_decode($json));
 
         $lecturers->each(function($lecturers){ 
-            student::create([ 
+            lecturer::create([ 
                 'name' =>$lecturers ->name,
                 'email' =>$lecturers ->email,
                 'age' =>$lecturers ->age,

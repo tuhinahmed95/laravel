@@ -16,5 +16,16 @@ class StudentController extends Controller
         return view('welcome', compact('students'));
     }
 
-    
+    public function uniondata(){ 
+        $lecturers = DB::table('lecturers')
+                        ->select('name','email','city_name')
+                        ->join('cities','lecturers.city','=','cities.id');
+
+        $students = DB::table('students')
+                        ->union($lecturers)
+                        ->select('name','email','city_name')
+                        ->join('cities','students.city','=','cities.id')
+                        ->get();
+           return $students;                 
+    }
 }
