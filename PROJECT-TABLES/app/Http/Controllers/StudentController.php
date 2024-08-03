@@ -29,14 +29,14 @@ class StudentController extends Controller
            return $students;                 
     }
 
-    // public function whendata(){ 
-    //     $students = DB::table('students')
-    //                     ->when(true, function($query){ 
-    //                         $query->where('age','>',19);
-    //                     })
-    //                     ->get();
-    //     return $students;                
-    // }
+    public function whendata(){ 
+        $students = DB::table('students')
+                        ->when(true, function($query){ 
+                            $query->where('age','>',30);
+                        })
+                        ->get();
+        return $students;                
+    }
 
     public function chunkdata(){ 
         $students = DB::table('students')->orderBy('id')->chunk(3,function($students){ 
