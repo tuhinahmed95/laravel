@@ -42,6 +42,8 @@ class StudentController extends Controller
         $students = DB::table('students')->orderBy('id')->chunk(3,function($students){ 
             foreach($students as $student){ 
                 echo $student->name. "<br>";
+                echo $student->email. "<br>";
+                echo $student->age. "<br>";
             }
         });
     }
