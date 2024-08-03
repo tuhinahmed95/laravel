@@ -47,4 +47,9 @@ class StudentController extends Controller
             }
         });
     }
+
+    public function showStudent2(){ 
+        $students = DB::select("select name,email,age from students where name like ? and age> ?",["t%",20]);
+        return $students;
+    }
 }
