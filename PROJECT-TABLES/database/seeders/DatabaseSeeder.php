@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use App\Models\student;
 use App\Models\citie;
+use App\Models\lecturer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([ 
             CitieSeeder::class
+        ]);
+        $this->call([ 
+            LecturerSeeder::class
         ]);
     }
 }

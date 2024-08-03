@@ -1,0 +1,32 @@
+[ 
+    { 
+        "name"  : "Rifat",
+        "email"  : "rifat@gmail.com",
+        "age"  : 32,
+        "city"  : 1
+    },
+    { 
+        "name"  : "Sajib",
+        "email"  : "sajib@gmail.com",
+        "age"  : 39,
+        "city"  : 2
+    },
+    { 
+        "name"  : "Tomal",
+        "email"  : "tomal@gmail.com",
+        "age"  : 27,
+        "city"  :3
+    },
+    { 
+        "name"  : "Sanjida",
+        "email"  : "sanjida@gmail.com",
+        "age"  : 38,
+        "city"  :4
+    },
+    { 
+        "name"  : "Sima",
+        "email"  : "sima@gmail.com",
+        "age"  : 14,
+        "city"  :5
+    }
+]

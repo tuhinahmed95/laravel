@@ -15,4 +15,6 @@ class StudentController extends Controller
         // return $students;
         return view('welcome', compact('students'));
     }
+
+    
 }
