@@ -30,11 +30,19 @@ class StudentController extends Controller
     }
 
     // public function whendata(){ 
-    //     $students = DB::class('students')
+    //     $students = DB::table('students')
     //                     ->when(true, function($query){ 
     //                         $query->where('age','>',19);
     //                     })
     //                     ->get();
     //     return $students;                
     // }
+
+    public function chunkdata(){ 
+        $students = DB::table('students')->orderBy('id')->chunk(3,function($students){ 
+            foreach($students as $student){ 
+                echo $student->name. "<br>";
+            }
+        });
+    }
 }
