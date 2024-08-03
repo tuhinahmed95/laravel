@@ -30,4 +30,5 @@ class LecturerSeeder extends Seeder
             ]);
         });
     }
+   
 }

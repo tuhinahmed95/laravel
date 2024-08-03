@@ -6,4 +6,6 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/', [StudentController::class, 'showStudents']);
 
-Route::get('/union', [StudentController::class, 'uniondata']);
+Route::get('/union', [StudentController::class, 'uniondata'])->name('union');
+
+// Route::get('/when', [StudentController::class, 'whendata']);

@@ -28,4 +28,13 @@ class StudentController extends Controller
                         ->get();
            return $students;                 
     }
+
+    // public function whendata(){ 
+    //     $students = DB::class('students')
+    //                     ->when(true, function($query){ 
+    //                         $query->where('age','>',19);
+    //                     })
+    //                     ->get();
+    //     return $students;                
+    // }
 }
