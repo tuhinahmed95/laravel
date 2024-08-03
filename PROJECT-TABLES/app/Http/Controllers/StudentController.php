@@ -11,7 +11,6 @@ class StudentController extends Controller
         $students = DB::table('students')
                         ->select('students.*', 'cities.city_name')
                         ->join('cities','students.city','=','cities.id')
-                        ->where('students.name','like','T%')
                         ->get();
         // return $students;
         return view('welcome', compact('students'));
