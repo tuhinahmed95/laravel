@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        echo "Index page";
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        echo "create page";
     }
 
     /**
@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "show Page";
     }
 
     /**

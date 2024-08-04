@@ -9,4 +9,4 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::resource('Users', [UserController::class]);
+Route::resource('users', UserController::class);
