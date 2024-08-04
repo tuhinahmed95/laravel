@@ -49,7 +49,20 @@ class StudentController extends Controller
     }
 
     public function showStudent2(){ 
-        $students = DB::select("select name,email,age from students where name like ? and age> ?",["t%",20]);
+
+        // $students = DB::insert("insert into students (name,email,age,city) 
+        //                         values(?,?,?,?)",['Ripon Mondol','ripon@gmail.com',45,3]);
+
+        // $students = DB::select("select name,email,age From students where id = :id", ['id'=>5]);
+
+        // $students = DB::update("update students set email= 'test@gmail.com' where id= ?", [10]);
+
+        // $students = DB::delete("delete From students where id = ?", [11]);
+
+        $students = DB::table('students')
+                        ->selectRaw('count(*) as student_count,age,city')
+                        ->groupByRaw('age,city')
+                        ->get();
         return $students;
     }
 }
