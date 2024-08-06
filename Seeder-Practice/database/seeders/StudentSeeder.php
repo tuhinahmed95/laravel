@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 use App\Models\student;
 
 class StudentSeeder extends Seeder
@@ -15,30 +16,17 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        $students = collect([ 
-            [ 
-                'name' => 'Tanvir',
-                'email' => 'tanvir@gmail.com',
-                'age' => 30,
-                'city' => 'Bhola'
-            ],
-            [ 
-                'name' => 'Shoain',
-                'email' => 'shoaib@gmail.com',
-                'age' => 55,
-                'city' => 'Rawalpindi'
-            ],
-            [ 
-                'name' => 'Amir',
-                'email' => 'amir@gmail.com',
-                'age' => 33,
-                'city' => 'Pakistan'
-            ]
-        ]);
+      $json = File::get(path:'database/json/students.json');
+      $students = collect(json_decode($json));
 
-        $students -> each(function($student){ 
-            student::insert($student);
-        });
+      $students->each(function($student){ 
+        student::create([ 
+            'name'=>$student->name,
+            'email'=>$student->email,
+            'age'=>$student->age,
+            'city'=>$student->city,
+        ]);
+      });
 
         // student::create([ 
         //     'name'=>'Tuhin',

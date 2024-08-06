@@ -1,0 +1,26 @@
+[ 
+    {
+        "name" : "Tasrif",
+        "email" : "tasrif@gmail.com",
+        "age" : 37,
+        "city" : "Bogura"
+    },
+    { 
+        "name" : "Afif",
+        "email" : "afif@gmail.com",
+        "age" : 38,
+        "city" : "Rangpur"
+    },
+    { 
+        "name" : "Saikat",
+        "email" : "saikat@gmail.com",
+        "age" : 18,
+        "city" : "Gaibandha"
+    },
+    { 
+        "name" : "Molin",
+        "email" : "molin@gmail.com",
+        "age" : 17,
+        "city" : "Natore"
+    }
+]
