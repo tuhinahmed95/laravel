@@ -16,17 +16,15 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-      $json = File::get(path:'database/json/students.json');
-      $students = collect(json_decode($json));
-
-      $students->each(function($student){ 
-        student::create([ 
-            'name'=>$student->name,
-            'email'=>$student->email,
-            'age'=>$student->age,
-            'city'=>$student->city,
-        ]);
-      });
+     
+        for($x =1; $x <=10; $x++){ 
+            student::create([ 
+                'name'=>fake()->name(),
+                'email'=>fake()->email(),
+                'age'=>fake()->numberBetween(),
+                'city'=>fake()->city()
+              ]);
+        }
 
         // student::create([ 
         //     'name'=>'Tuhin',
