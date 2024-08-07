@@ -14,9 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        
-        return view('welcome', compact('users'));
+        $users = User::find([2,3],['name','email']);
+
+        return $users;
+        // return view('welcome', compact('users'));
     }
 
     /**
