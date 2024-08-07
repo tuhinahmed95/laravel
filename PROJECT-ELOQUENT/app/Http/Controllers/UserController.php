@@ -17,7 +17,7 @@ class UserController extends Controller
         $users = User::where('age', '>',20)->get();
 
         // return $users;
-        return view('welcome', compact('users'));
+        return view('home', compact('users'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('adduser');
     }
 
     /**
@@ -47,9 +47,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(string $id)
     {
-        //
+        $users = User::find($id);
+
+        return view('view',compact('users'));
     }
 
     /**
@@ -60,7 +62,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('update');
     }
 
     /**
