@@ -14,10 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::find([2,3],['name','email']);
+        $users = User::where('age', '>',20)->get();
 
-        return $users;
-        // return view('welcome', compact('users'));
+        // return $users;
+        return view('welcome', compact('users'));
     }
 
     /**

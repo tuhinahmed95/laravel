@@ -12,6 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-7">
+                <h1 class="bg-primary text-white text-center">User Information</h1>
                 <table class="table table-striped table-bordered mt-5">
                     @foreach ($users as $user )
                         <tr> 
