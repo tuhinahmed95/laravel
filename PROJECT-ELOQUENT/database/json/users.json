@@ -1,0 +1,38 @@
+[ 
+    { 
+        "name" : "tuhin",
+        "email" : "mtuhin@gmail.com",
+        "age" : 30,
+        "city" : "Gaibandha"
+    },
+    { 
+        "name" : "Ashik",
+        "email" : "ashik@gmail.com",
+        "age" : 23,
+        "city" : "Gaibandha"
+    },
+    { 
+        "name" : "Ripon",
+        "email" : "ripon@gmail.com",
+        "age" : 37,
+        "city" : "Dinajpur"
+    },
+    { 
+        "name" : "Selim",
+        "email" : "selim@gmail.com",
+        "age" : 55,
+        "city" : "Dhaka"
+    },
+    { 
+        "name" : "Akib",
+        "email" : "akib@gmail.com",
+        "age" : 24,
+        "city" : "Jhinaidhah"
+    },
+    { 
+        "name" : "Dipon",
+        "email" : "dipon@gmail.com",
+        "age" : 26,
+        "city" : "Rangpur"
+    }
+]
