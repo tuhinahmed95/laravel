@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-    <form action="" method="POST"> 
+    <form action="{{ route('user.store') }}" method="POST"> 
+        @csrf
         <div class="mb-3"> 
             <label for="username" class="form-label">User Name</label>
             <input type="text" name="username" class="form-control">
@@ -23,10 +24,10 @@
 
         <div class="mb-3"> 
             <label for="usercity" class="form-label">User City</label>
-            <input type="email" name="usercity" class="form-control">
+            <input type="text" name="usercity" class="form-control">
         </div>
         <div class="mb-3"> 
-            <input type="submit" value="submit" class="btn btn-success">
+            <input type="submit" value="Save" class="btn btn-success">
         </div>
     </form>
 @endsection

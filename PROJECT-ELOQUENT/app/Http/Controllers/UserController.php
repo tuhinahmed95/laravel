@@ -38,7 +38,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $user = new User;
+
+        // $user->name = $request->username;
+        // $user->email = $request->useremail;
+        // $user->age = $request->userage;
+        // $user->city = $request->usercity;
+
+        // $user->save();
+
+        User::create([ 
+            'name'=>$request->username,
+            'email'=>$request->useremail,
+            'age'=>$request->userage,
+            'city'=>$request->usercity,
+        ]);
+
+        return redirect()->route('user.index')->with('status', 'Data Added Successfully');
     }
 
     /**
@@ -61,8 +77,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
-    {
-        return view('update');
+    {   $users = User::find($user->id);
+        return view('update', compact('users'));
     }
 
     /**
@@ -72,9 +88,18 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, string $id)
     {
-        //
+        $user = User::find($id);
+
+        $user ->name = $request -> username;
+        $user ->email = $request -> useremail;
+        $user ->age = $request -> userage;
+        $user ->city = $request -> usercity;
+
+        $user -> save();
+
+        return redirect()->route('user.index')->with('status','User Data Updated Successfully');
     }
 
     /**

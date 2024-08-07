@@ -19,6 +19,16 @@
             <div class="col-8 bg-warning mb-3"> 
                 <h4>@yield('title')</h4>
             </div>
+
+            <div class="row">
+                <div class="col-8"> 
+                    @if (session('status'))
+                        <div class="alert alert-success"> 
+                            {{ session('status')}}
+                        </div>
+                    @endif
+                </div>
+            </div>
             <div class="row"> 
                 <div class="col-8">
                    @yield('content')
