@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('age', '>',20)->get();
+        $users = User::simplepaginate(4);
 
         // return $users;
         return view('home', compact('users'));
@@ -108,8 +108,13 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+
+        // User::destroy($id);
+
+        return redirect()->route('user.index')->with('status', 'User Data Delete Successfully');
     }
 }
