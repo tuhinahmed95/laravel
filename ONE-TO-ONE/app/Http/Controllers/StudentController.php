@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Contact;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::where('gender', 'M')
+                            ->withWhereHas('contact', function($query){ 
+                                $query->where('city', 'mumbai');
+                            })->get();
         return $students;
     }
 
