@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Cotrollers\Post;
-use App\Http\Cotrollers\User;
+use App\Models\User;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('user')->find(1);
+        $posts = Post::with('user')->get();
         return $posts;
     }
 
