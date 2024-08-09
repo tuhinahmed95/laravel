@@ -26,7 +26,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $post = new Post([ 
+            'title'=> 'news tite - test',
+            'description' => 'just testing ...'
+        ]);
+
+        $user = find(2);
+        $user->post()->save($post);
     }
 
     /**
