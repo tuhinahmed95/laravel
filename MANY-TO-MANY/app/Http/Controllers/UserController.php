@@ -22,8 +22,7 @@ class UserController extends Controller
             echo $user->email. '<br>';
 
             foreach($users->roles as $role){ 
-                 echo $role->role_name;
-                 echo $role->role_name;
+                 echo $role->role_name. "</>";
             }
 
             echo "<hr>";
