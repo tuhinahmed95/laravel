@@ -23,8 +23,9 @@ class UserController extends Controller
 
             foreach($users->roles as $role){ 
                  echo $role->role_name;
+                 echo $role->role_name;
             }
-            
+
             echo "<hr>";
         }
 
