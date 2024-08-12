@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::group(['middleware' => 'admin.guest'], function(){ 
         Route::get('/login', [AdminloginController::class, 'index'])->name('admin.login');
+        Route::post('/authenticate', [AdminloginController::class, 'authenticate'])->name('admin.authenticate');
 
     });
 
