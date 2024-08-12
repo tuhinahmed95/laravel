@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminloginController;
+use App\Http\Controllers\Admin\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,10 @@ Route::group(['prefix' => 'admin'], function(){
 
     });
 
-    Route::group(['middleware' => 'admin.auth'], function(){ 
+    Route::group(['middleware' => 'admin.auth'], function(){
+
+        Route::get('/login', [HomeController::class, 'index'])->name('admin.dashboard');
+        
 
     });
 });
