@@ -12,7 +12,7 @@ class CategoryController extends Controller
 
     }
 
-    
+
 
     public function create(){ 
         return view('admin.category.create');
@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
         } else{ 
             return response()->json([ 
-                'status' => true,
+                'status' => false,
                 'errors' => $validator->errors()
             ]);
         }

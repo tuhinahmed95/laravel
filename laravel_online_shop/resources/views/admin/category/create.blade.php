@@ -28,13 +28,15 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name">	
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                                <p></p>	
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="slug">Slug</label>
                                 <input type="text" name="slug" id="slug" class="form-control" placeholder="Slug">	
+                                <p></p>
                             </div>
                         </div>	
                         <div class="col-md-6">
@@ -65,21 +67,24 @@
 @section('customjs')
 <script> 
     $("#categoryForm").submit(function(event){ 
-        event.preventDefault();  // preventDefault সঠিকভাবে লেখা হয়েছে
+        event.preventDefault();  
         var element = $(this);
 
         $.ajax({ 
             url: '{{ route("categories.store") }}',
             type: 'POST',
-            data: element.serializeArray(),  // 'date' এর পরিবর্তে 'data'
+            data: element.serializeArray(),  
             dataType: 'json',
             success: function(response){ 
-                console.log("Form submitted successfully");
-                // আপনি সফলতার পরে যা করতে চান তা এখানে যোগ করুন
+                var errors = response['errors'];
+                if(errors['name']){ 
+                    $("#name").addClass('is-invalid').siblings('p').addClass('invalid-feedback').html(errors['name']);
+                }
+               
             },
             error: function(jqXHR, exception){ 
                 console.log("Something went wrong");
-                // আপনি ত্রুটি ঘটলে যা করতে চান তা এখানে যোগ করুন
+                
             }
         });
     });
