@@ -76,9 +76,29 @@
             data: element.serializeArray(),  
             dataType: 'json',
             success: function(response){ 
+
+                if (response["status"] == true) { 
+
+                    $("#name").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
+                    $("#slug").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
+
+
+                } else{
+
+                }
+
+
                 var errors = response['errors'];
                 if(errors['name']){ 
                     $("#name").addClass('is-invalid').siblings('p').addClass('invalid-feedback').html(errors['name']);
+                } else{ 
+
+                }
+
+                if(errors['slug']){ 
+                    $("#slug").addClass('is-invalid').siblings('p').addClass('invalid-feedback').html(errors['slug']);
+                } else{ 
+
                 }
                
             },
@@ -88,6 +108,24 @@
             }
         });
     });
+
+    $("#name").change(function(){ 
+            element = $(this);
+            $.ajax({ 
+            url: '{{ route("getSlug") }}',
+            type: 'get',
+            data: {title: element.val()},  
+            dataType: 'json',
+            success: function(response){ 
+                if(response["status"] == true) { 
+                    $("slug").val(response["slug"]);
+                }
+            }
+        });
+
+    });
+       
+
 </script>
 
 @endsection
