@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\TempImage;
 use Illuminate\Support\Facades\File;
 use Image;
+use Illuminate\Support\Arr;
 
 
 class CategoryController extends Controller
@@ -49,22 +50,29 @@ class CategoryController extends Controller
 
             // save image here
 
-            if(!empty($request->image_id)){ 
+            if (!empty($request->image_id)) { 
                 $tempImage = TempImage::find($request->image_id);
-                $extArry = explode('.',$tempImage->name);
-                $ext = last($extArry);
-
-                $newImageName = $category->id.'.'. $ext;
-                $sPath = public_path().'/temp/'.$tempImage->name;
-                $dPath = public_path().'/uploads/category/'.$newImageName ;
+                
+                $extArry = explode('.', $tempImage->name);
+                $ext = Arr::last($extArry); 
+            
+                $newImageName = $category->id . '.' . $ext;
+                
+                $sPath = public_path() . '/temp/' . $tempImage->name;
+                $dPath = public_path() . '/uploads/category/' . $newImageName;
+                
                 File::copy($sPath, $dPath);
-
-                // generate image thumbnail
-                $imag = Image::make('public/foo.jpg');
-
+            
+                $thumbPath = public_path() . '/uploads/category/thumb/' . $newImageName;
+                
+                $img = Image::make($sPath);
+                $img->resize(450, 600); 
+                $img->save($thumbPath); 
+            
                 $category->image = $newImageName;
                 $category->save();
             }
+            
 
             $request->session()->flash('success','Category added succesfully');
 
