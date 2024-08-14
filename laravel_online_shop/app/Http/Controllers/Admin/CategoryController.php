@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
+use App\Models\TempImage;
+use Illuminate\Support\Facades\File;
+
 
 class CategoryController extends Controller
 {
@@ -42,6 +45,22 @@ class CategoryController extends Controller
             $category->slug = $request->slug;
             $category->status = $request->status;
             $category->save();
+
+            // save image here
+
+            if(!empty($request->image_id)){ 
+                $tempImage = TempImage::find($request->image_id);
+                $extArry = explode('.',$tempImage->name);
+                $ext = last($extArry);
+
+                $newImageName = $category->id.'.'. $ext;
+                $sPath = public_path().'/temp/'.$tempImage->name;
+                $dPath = public_path().'/uploads/category/'.$newImageName ;
+                File::copy($sPath, $dPath);
+
+                $category->image = $newImageName;
+                $category->save();
+            }
 
             $request->session()->flash('success','Category added succesfully');
 

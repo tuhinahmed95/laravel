@@ -42,6 +42,7 @@
 
                         <div class="col-md-6"> 
                             <div class="mb-3">
+                                <input type="hidden" id="image_id" name="image_id" value="">
                                 <label for="image">Image</label>
                                 <div id="image" class="dropzone dz-clickable"> 
                                     <div class="dz-message needsclick">
@@ -165,7 +166,7 @@ const dropzone = $("#image").dropzone({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') 
     },
     success: function(file, response){ 
-        // $("#image_id").val(response.image_id); 
+        $("#image_id").val(response.image_id); 
     }
 });
 
