@@ -21,21 +21,24 @@
     <!-- Default box -->
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header">
-                <form action="" method="get"> 
+            <form action="" method="get"> 
+
+                <div class="card-header">
+                    <div></div>
 
                     <div class="card-tools">
                         <div class="input-group input-group" style="width: 250px;">
-                            <input type="text" name="keyword" class="form-control float-right" placeholder="Search">
+                            <input value="{{ Request::get('keyword') }}" type="text" name="keyword" class="form-control float-right" placeholder="Search">
         
                             <div class="input-group-append">
                               <button type="submit" class="btn btn-default">
                                 <i class="fas fa-search"></i>
                               </button>
                             </div>
-                          </div>
+                        </div>
                     </div>
-                </form>
+
+            </form>
                 
             </div>
             <div class="card-body table-responsive p-0">								
