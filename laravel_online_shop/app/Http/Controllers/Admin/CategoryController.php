@@ -91,8 +91,8 @@ class CategoryController extends Controller
 
 
 
-    public function edit(){ 
-        
+    public function edit($categoryId, Request $request){ 
+        return view('admin.category.edit');
     }
 
     public function update(){ 
