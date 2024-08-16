@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminloginController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TempImagesController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Http\Request;
 
 
@@ -19,9 +20,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [FrontController::class, 'index'])->name('front.home');
 
 
 Route::group(['prefix' => 'admin'], function(){ 
