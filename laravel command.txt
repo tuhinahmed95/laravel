@@ -1,6 +1,6 @@
 
 ----- table make in db -------
------ table make in db -------
+
 
 *** php artisan make:migration create_students_table .
 *** php artisan migrate => table create succesfully .
