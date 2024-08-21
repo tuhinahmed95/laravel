@@ -9,6 +9,9 @@ class User extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+    public $timestamps = false;
+
     public function image(){ 
         return $this->morphOne(Image::class, 'imageable');
     }

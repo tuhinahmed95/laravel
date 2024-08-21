@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -23,7 +24,14 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $post = Post::create([
+            'title' => "first news one",
+            'description' => "dddd eeee ffff gggg"
+        ]);
+
+        $post->image()->create([
+            'url' => 'post.jpg'
+        ]);
     }
 
     /**
