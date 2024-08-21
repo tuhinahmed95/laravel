@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Post;
 
-class UserController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('image')->get();
-        return $users;
+        //
     }
 
     /**
@@ -25,11 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = User::find(1);
-
-        $user->image()->create([
-            'url' => 'image/uses/salman1.jpg',
-        ]);
+        
     }
 
     /**
