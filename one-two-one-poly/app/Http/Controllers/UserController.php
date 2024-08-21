@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = User::find(2);
+        $user = User::find(1);
 
         $user->image()->create([
             'url' => 'image/uses/salman1.jpg',
