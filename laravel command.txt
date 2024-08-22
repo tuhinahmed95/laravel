@@ -1,5 +1,4 @@
 
------ table make in db -------
 
 
 *** php artisan make:migration create_students_table .
