@@ -14,8 +14,12 @@
           <a class="navbar-brand text-light" href="/">Products</a>
         </div>
       </nav>
+
     <div class="container">
-        <h1> Products</h1>
+        <div class="text-end">
+            <a href="products/create" class="btn btn-dark mt-2">New Product</a>
+        </div>
+        
     </div>
 
 </body>
