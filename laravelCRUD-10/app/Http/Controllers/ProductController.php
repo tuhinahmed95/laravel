@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        return view('products.index');
+        $products = Product::get();
+        return view('products.index',compact('products'));
     }
 
     public function create(){
@@ -24,7 +25,7 @@ class ProductController extends Controller
             'description' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg,gif|max:1000',
         ]);
-        
+
         // upload image
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('products'), $imageName);
@@ -35,6 +36,12 @@ class ProductController extends Controller
         $product->description=$request->description;
 
         $product->save();
-        return back();
+        return back()->withSuccess('Product Created Successfully !!!');
+    }
+
+    public function edit($id){
+        $products = Product::where('id', $id)->first();
+
+        return view('products.edit',compact('products'));
     }
 }
