@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="/">Products</a>
+          <a class="navbar-brand text-light" href="">Products</a>
         </div>
       </nav>
 
@@ -19,7 +19,7 @@
         <div class="text-end">
             <a href="products/create" class="btn btn-dark mt-2">New Product</a>
         </div>
-        
+
     </div>
 
 </body>
