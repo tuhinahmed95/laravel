@@ -16,6 +16,8 @@ class ProductController extends Controller
         return view('products.create');
     }
 
+
+
     public function store(Request $request){
 
         // vlaidate
@@ -36,7 +38,7 @@ class ProductController extends Controller
         $product->description=$request->description;
 
         $product->save();
-        return back()->withSuccess('Product Created Successfully !!!');
+        return redirect()->route('products.index')->withSuccess('Product Created Successfully !!!');
     }
 
     public function edit($id){
@@ -68,6 +70,19 @@ class ProductController extends Controller
         $product->description=$request->description;
 
         $product->save();
-        return back()->withSuccess('Product Updated Successfully !!!');
+        return redirect()->route('products.index')->withSuccess('Product Updated Successfully !!!');
+    }
+
+    public function destroy( $id){
+        $product = Product::where('id',$id)->first();
+        $product->delete();
+
+        return redirect()->route('products.index')->withSuccess('Product Delete Successfully');
+    }
+
+    public function show($id){
+        $product = Product::where('id', $id)->first();
+
+        return view('products.show', compact('product'));
     }
 }
