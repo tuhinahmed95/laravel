@@ -36,7 +36,11 @@
                     <td>{{$loop->index+1}}</td>
                     <td>{{$product->name}}</td>
                     <td><img src="products/{{$product->image}}" alt="" class="rounded-circle" width="30" height="30"></td>
-                    <td><a href="products/{{$product->id}}/edit" class="btn btn-dark btn-sm">Edit</a></td>
+                    <td>
+                        <a href="products/{{$product->id}}/edit" class="btn btn-dark btn-sm">Edit</a>
+                        <a href="products/{{$product->id}}/edit" class="btn btn-danger btn-sm">Delete</a>
+
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
