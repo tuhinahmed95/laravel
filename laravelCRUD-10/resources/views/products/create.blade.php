@@ -15,31 +15,32 @@
         </div>
       </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <form>
-                    <fieldset disabled>
-                      <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Disabled input</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                      </div>
-                      <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                        <select id="disabledSelect" class="form-select">
-                          <option>Disabled select</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                          <label class="form-check-label" for="disabledFieldsetCheck">
-                            Can't check this
-                          </label>
+        <div class="row justify-content-center">
+            <div class="col-sm-8">
+                <div class="card mt-3 p-3">
+                    <form action="products/store" method="POST" >
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control mt-2">
                         </div>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                  </form>
+
+                        <div class="form-group">
+                            <label for="">Description</label>
+                            <textarea name="description" class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Image</label>
+                            <input type="file" class="form-control" name="image">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark mt-2">Submin</button>
+
+
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
