@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-
+@section('title')
+<h3 class="bg-success d-inline">Add Product</h3>
+@endsection
 @section('content')
 
 <form action="" method="POST">

@@ -16,7 +16,7 @@
             </div>
 
             <div >
-                <h3 class="text-end bg-success d-inline">Add New Product</h3>
+                @yield('title')
             </div>
         </div>
 
