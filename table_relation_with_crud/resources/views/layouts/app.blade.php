@@ -15,13 +15,13 @@
                 <h3 class="bg-info">Product</h3>
             </div>
 
-            <div class="text-align-end bg-success d-inline">
-                <h2>Add New Product</h2>
+            <div >
+                <h3 class="text-end bg-success d-inline">Add New Product</h3>
             </div>
         </div>
 
         @yield('content')
     </div>
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
