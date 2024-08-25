@@ -10,6 +10,6 @@ class Student extends Model
     use HasFactory;
 
     public function contact(){
-        return $this->hasOne(Contact::class, 'student_id');
+        return $this->hasOne(Contact::class);
     }
 }
