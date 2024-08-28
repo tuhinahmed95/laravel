@@ -36,7 +36,7 @@
 
                             <div class="mb-3">
                                 <label for="confirm-password" class="form-label">Confirm Password</label>
-                                <input type="text" name="confirm-password" class="form-control" id="confirm-password">
+                                <input type="text" name="password_confirmation" class="form-control" id="confirm-password">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Register</button>
