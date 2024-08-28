@@ -27,4 +27,7 @@ Route::post('loginMatch', [UserController::class, 'login'])->name('loginMatch');
 
 Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
+Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+
 
