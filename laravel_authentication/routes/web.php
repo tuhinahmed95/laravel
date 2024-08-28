@@ -19,6 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('register', 'register' )->name('register');
+Route::view('register', 'register' )->name('register');
 Route::post('registerSave', [UserController::class, 'resigter'])->name('registerSave');
-Route::get('login', 'login')->name('login');
+
+Route::view('login', 'login')->name('login');
+Route::post('loginMatch', [UserController::class, 'login'])->name('loginMatch');
+
+Route::post('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+
