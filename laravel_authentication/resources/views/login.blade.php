@@ -30,10 +30,7 @@
                                 <input type="text" name="password" class="form-control" id="password">
                             </div>
 
-                            <div class="mb-3">
-                                <label for="confirm-password" class="form-label">Confirm Password</label>
-                                <input type="text" name="password_confirmation" class="form-control" id="confirm-password">
-                            </div>
+                            
 
                             <button type="submit" class="btn btn-primary">Login</button>
                             <a href="/" class="btn btn-secondary">Back</a>

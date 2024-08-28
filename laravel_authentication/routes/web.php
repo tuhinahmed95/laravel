@@ -25,6 +25,6 @@ Route::post('registerSave', [UserController::class, 'resigter'])->name('register
 Route::view('login', 'login')->name('login');
 Route::post('loginMatch', [UserController::class, 'login'])->name('loginMatch');
 
-Route::post('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
 
