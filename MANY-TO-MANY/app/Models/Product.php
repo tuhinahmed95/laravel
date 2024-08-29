@@ -10,6 +10,6 @@ class Product extends Model
     use HasFactory;
 
     public function categoriesSub(){
-        return $this->hasOneThrough(Category::class, Subcategory::class, 'product_id', 'subcategory_id');
+        return $this->hasOneThrough(Category::class, Subcategory::class, 'product_id', 'id','id','suncategory_id');
     }
 }
