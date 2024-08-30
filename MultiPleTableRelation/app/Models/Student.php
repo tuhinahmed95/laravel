@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
 
-    // public function contacts(){
-    //     return $this->hasOne(Contact::class);
-    // }
+    public function contacts(){
+        return $this->hasOne(Contact::class);
+    }
 }
