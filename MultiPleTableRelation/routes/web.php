@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollegestudentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,8 @@ Route::get('/', function () {
 
 Route::get('show', [StudentController::class, 'show'])->name('show');
 Route::get('/show/create', [StudentController::class, 'create'])->name('create');
+
 Route::get('/contact', [ContactController::class, 'showContact'])->name('contact');
+
+Route::get('/showstudent', [CollegestudentController::class, 'showStudents'])->name('showstudent');
+
