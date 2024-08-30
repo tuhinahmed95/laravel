@@ -9,6 +9,7 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'age', 'gender'];
     public function contacts(){
         return $this->hasOne(Contact::class);
     }
