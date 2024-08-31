@@ -12,4 +12,5 @@ class CollegestudentController extends Controller
         $collegeStudents = Collegestudetn::with('books')->get();
         return $collegeStudents;
     }
+
 }

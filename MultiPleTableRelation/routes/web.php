@@ -26,4 +26,3 @@ Route::get('/show/create', [StudentController::class, 'create'])->name('create')
 Route::get('/contact', [ContactController::class, 'showContact'])->name('contact');
 
 Route::get('/showstudent', [CollegestudentController::class, 'showStudents'])->name('showstudent');
-
