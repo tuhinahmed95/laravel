@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
+            $table->string('phone_number');
+            $table->string('address');
+            $table->foreignId('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }
