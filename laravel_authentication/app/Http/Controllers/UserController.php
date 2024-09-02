@@ -7,24 +7,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function register(Request $request){
-        $data = $request->validate([
+    public function regitration(Request $request){
+        $data =$request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
         ]);
 
-        $data['password'] = bcrypt($data['password']);
+        $user = User::create($data);
 
-        try {
-            $user = User::create($data);
-
-            if($user){
-                return redirect()->route('login')->with('success', 'আপনি সফলভাবে নিবন্ধন করেছেন।');
-            }
-        } catch (\Exception $e) {
-            return back()->withErrors(['msg' => 'নিবন্ধনে সমস্যা হয়েছে, দয়া করে আবার চেষ্টা করুন।']);
+        if($user){
+            return redirect()->route('login');
         }
     }
-
 }
