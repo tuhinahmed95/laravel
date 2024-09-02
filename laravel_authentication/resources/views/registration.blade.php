@@ -16,49 +16,49 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Registration Form</h3>
-                        <div class="card-body">
-                            <form action="{{ route('registerSave') }}" method="POST">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="name" id="username">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="useremail" class="form-label">Email Address</label>
-                                    <input type="text" class="form-control" name="name" id="useremail">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="userpassword" class="form-label">Password</label>
-                                    <input type="text" class="form-control" name="name" id="userpassword">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="userpassword-confirm" class="form-label">Confirm Password</label>
-                                    <input type="text" class="form-control" name="name" id="userpassword-confirm">
-                                </div>
-                                <button type="submit" class="btn btn-success">Registration</button>
-                                <a href="/" class="btn btn-primary">Back</a>
-                            </form>
-                        </div>
-
-                        @if ($errors->any())
-                        <div class="card-footer text-body-secondary">
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{$error}}</li>
-                                    @endforeach
-                                </ul>
+                    </div> <!-- card-header div শেষ -->
+                    <div class="card-body"> <!-- card-body div শুরু -->
+                        <form action="{{ route('registerSave') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" id="username">
                             </div>
-                        </div>
 
-                        @endif
+                            <div class="mb-3">
+                                <label for="useremail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" name="email" id="useremail">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="userpassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="userpassword">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="userpassword-confirm" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" name="password_confirmation" id="userpassword-confirm">
+                            </div>
+                            <button type="submit" class="btn btn-success">Registration</button>
+                            <a href="/" class="btn btn-primary">Back</a>
+                        </form>
+                    </div> <!-- card-body div শেষ -->
+
+                    @if ($errors->any())
+                    <div class="card-footer text-body-secondary">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
