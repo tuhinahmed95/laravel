@@ -16,8 +16,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Registration Form</h3>
-                    </div> <!-- card-header div শেষ -->
-                    <div class="card-body"> <!-- card-body div শুরু -->
+                    </div>
+                    <div class="card-body">
                         <form action="{{ route('registerSave') }}" method="POST">
                             @csrf
                             <div class="mb-3">
@@ -42,7 +42,7 @@
                             <button type="submit" class="btn btn-success">Registration</button>
                             <a href="/" class="btn btn-primary">Back</a>
                         </form>
-                    </div> <!-- card-body div শেষ -->
+                    </div>
 
                     @if ($errors->any())
                     <div class="card-footer text-body-secondary">

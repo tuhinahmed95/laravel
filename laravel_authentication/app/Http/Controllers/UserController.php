@@ -14,7 +14,6 @@ class UserController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
 
-        // পাসওয়ার্ড এনক্রিপ্ট করা
         $data['password'] = bcrypt($data['password']);
 
         try {
