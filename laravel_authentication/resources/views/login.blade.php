@@ -27,6 +27,18 @@
                                 <button type="submit" class="btn btn-success">Login</button>
                                 <a href="/" class="btn btn-primary">Back</a>
                             </form>
+                            @if ($errors->any())
+                            <div class="card-footer text-body-secondary">
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{$error}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+
+                            @endif
                         </div>
                     </div>
                 </div>
