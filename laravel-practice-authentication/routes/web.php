@@ -11,3 +11,5 @@ Route::get('/', function () {
 Route::get('/page',[BlogController::class, 'index']);
 
 Route::get('/user', [UserController::class, 'user']);
+
+Route::get('/contact', [UserController::class,'contact']);
