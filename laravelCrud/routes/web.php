@@ -7,6 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users',[UserController::class,'showusers']);
-Route::get('/adduser',[UserController::class,'addUser']);
+Route::get('/users',[UserController::class,'showusers'])->name('users');
+Route::get('/adduser',[UserController::class,'addUser'])->name('adduser');
 Route::get('/store',[UserController::class,'store'])->name('store');

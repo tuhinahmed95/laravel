@@ -22,16 +22,57 @@ class UserController extends Controller
     public function addUser(){
         $user = DB::table('users')
                 ->insert([
-                    'name'=>'tasrif',
-                    'email'=>'tasrif@gmail.com',
-                    'age' =>'30',
-                    'city'=>'dhaka',
-                    'created_at'=>now(),
-                    'updated_at'=>now()
+                    [
+                        'name'=>'Nehal',
+                        'email'=>'nehal@gmail.com',
+                        'age' =>'23',
+                        'city'=>'Sirajgang',
+                        'created_at'=>now(),
+                        'updated_at'=>now()
+                    ],
+                    [
+                        'name'=>'Munna',
+                        'email'=>'munna@gmail.com',
+                        'age' =>'25',
+                        'city'=>'sylhet',
+                        'created_at'=>now(),
+                        'updated_at'=>now()
+                    ],
+                    [
+                        'name'=>'Ripon vai',
+                        'email'=>'ripon@gmail.com',
+                        'age' =>'47',
+                        'city'=>'Chandpur',
+                        'created_at'=>now(),
+                        'updated_at'=>now()
+                    ],
+                    [
+                        'name'=>'Depika',
+                        'email'=>'depika@gmail.com',
+                        'age' =>'37',
+                        'city'=>'Mumbai',
+                        'created_at'=>now(),
+                        'updated_at'=>now()
+                    ],
+                    [
+                        'name'=>'Shahrukh khan',
+                        'email'=>'shahrukh@gmail.com',
+                        'age' =>'60',
+                        'city'=>'Mumbai Bandara',
+                        'created_at'=>now(),
+                        'updated_at'=>now()
+                    ]
                 ]);
+
+       if($user){
+             echo "<h1>Data Added Successfully</h1>";
+       }
+       else{
+             echo "<h1>Data Not Inserted</h1>";
+       }
     }
 
     public function store(){
-        
+
     }
 }
