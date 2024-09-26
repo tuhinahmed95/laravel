@@ -30,4 +30,8 @@ class UserController extends Controller
                     'updated_at'=>now()
                 ]);
     }
+
+    public function store(){
+        
+    }
 }

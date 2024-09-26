@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/users',[UserController::class,'showusers']);
 Route::get('/adduser',[UserController::class,'addUser']);
+Route::get('/store',[UserController::class,'store'])->name('store');
