@@ -32,7 +32,7 @@
                     <td>{{$user->city}}</td>
                     <td>
                         <a href="" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="" class="btn btn-success btn-sm">Delete</a>
+                        <a href="{{route('delete.user',$user->id)}}" class="btn btn-success btn-sm">Delete</a>
                     </td>
                 </tr>
                 @endforeach

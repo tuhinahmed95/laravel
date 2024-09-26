@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/view',[UserController::class,'showusers'])->name('users');
+Route::get('/view',[UserController::class,'showusers'])->name('home');
 
 Route::get('/adduser',[UserController::class,'addUser'])->name('adduser');
 
@@ -15,4 +15,4 @@ Route::get('/store',[UserController::class,'store'])->name('store');
 
 Route::get('/update/{id}',[UserController::class,'updateUser']);
 
-Route::get('/delete/{id}',[UserController::class,'deleteUser']);
+Route::get('/delete/{id}',[UserController::class,'deleteUser'])->name('delete.user');

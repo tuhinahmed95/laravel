@@ -92,7 +92,7 @@ class UserController extends Controller
                     ->delete();
 
         if($users){
-            echo "<h1>Data Delete Successfully</h1>";
+            return redirect()->route('home');
         }
     }
 }
