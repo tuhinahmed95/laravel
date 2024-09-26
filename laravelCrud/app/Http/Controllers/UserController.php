@@ -72,9 +72,9 @@ class UserController extends Controller
        }
     }
 
-    public function updateUser(string $id){
+    public function updateUser(){
             $users = DB::table('users')
-                    ->where('id',$id)
+                    ->where('id',4)
                     ->update([
                         'city'=>'Delli',
                         'name'=>'Hrithik',

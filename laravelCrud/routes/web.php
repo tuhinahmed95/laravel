@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users',[UserController::class,'showusers'])->name('users');
+Route::get('/view',[UserController::class,'showusers'])->name('users');
 
 Route::get('/adduser',[UserController::class,'addUser'])->name('adduser');
 
