@@ -72,7 +72,27 @@ class UserController extends Controller
        }
     }
 
-    public function store(){
+    public function updateUser(string $id){
+            $users = DB::table('users')
+                    ->where('id',$id)
+                    ->update([
+                        'city'=>'Delli',
+                        'name'=>'Hrithik',
+                        'age'=>'47'
+                    ]);
 
+            if($users){
+                echo "<h1>Update Successfully</h1>";
+            }
+    }
+
+    public function deleteUser(string $id){
+        $users = DB::table('users')
+                    ->where('id',$id)
+                    ->delete();
+
+        if($users){
+            echo "<h1>Data Delete Successfully</h1>";
+        }
     }
 }
