@@ -13,4 +13,4 @@ Route::get('/insert',[UserController::class,'create'])->name('create');
 
 Route::get('/update',[UserController::class,'update'])->name('update');
 
-Route::get('/delete',[UserController::class,'deleteUser'])->name('delete');
+Route::get('/delete/{id}',[UserController::class,'deleteUser'])->name('delete');

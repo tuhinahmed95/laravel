@@ -36,6 +36,9 @@ class UserController extends Controller
                         ],
 
                         ]);
+        if($users){
+            echo "<h1>Data Inserted Successfully</h1>";
+        }
     }
 
     public function update(){
@@ -46,10 +49,12 @@ class UserController extends Controller
                     ]);
     }
 
-    public function deleteUser(){
+    public function deleteUser(string $id){
         $users = DB::table('users')
-                    ->where('id',2)
+                    ->where('id',$id)
                     ->delete();
+
+        return redirect()->route('home');
     }
 
 

@@ -19,6 +19,7 @@
                         <th>Email</th>
                         <th>Age</th>
                         <th>City</th>
+                        <th>Action</th>
                     </tr>
                     @foreach ($users as $user)
                         <tr>
@@ -27,6 +28,7 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->age}}</td>
                             <td>{{$user->city}}</td>
+                            <td><a href="{{route('delete',$user->id)}}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     @endforeach
                 </table>
