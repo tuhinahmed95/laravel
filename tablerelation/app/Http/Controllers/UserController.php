@@ -12,4 +12,31 @@ class UserController extends Controller
 
         return view('allusers',compact('users'));
     }
+
+    public function create(){
+        $users = DB::table('users')
+                    ->insert([
+                        [
+                            'name'=>'tuhin',
+                            'email'=>'tuhin@gmail.com',
+                            'age'=>'29',
+                            'city'=>'Gaibandha'
+                        ],
+                        [
+                            'name'=>'Salman',
+                            'email'=>'salman@gmail.com',
+                            'age'=>'54',
+                            'city'=>'Mumbai'
+                        ],
+                        [
+                            'name'=>'Shahrukh',
+                            'email'=>'shahrukh@gmail.com',
+                            'age'=>'34',
+                            'city'=>'Delli'
+                        ],
+
+                        ]);
+    }
+
+    
 }
