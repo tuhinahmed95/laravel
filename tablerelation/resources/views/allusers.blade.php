@@ -1,5 +1,4 @@
-<
-!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +12,23 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <table>
+                <table class="table table-borderd table-hover mt-3">
                     <tr>
-                        <th></th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>City</th>
                     </tr>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->age}}</td>
+                            <td>{{$user->city}}</td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
