@@ -38,5 +38,19 @@ class UserController extends Controller
                         ]);
     }
 
-    
+    public function update(){
+        $users = DB::table('users')
+                    ->where('id',2)
+                    ->update([
+                        'name'=>'Amitabh'
+                    ]);
+    }
+
+    public function deleteUser(){
+        $users = DB::table('users')
+                    ->where('id',2)
+                    ->delete();
+    }
+
+
 }

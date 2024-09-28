@@ -8,4 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/view',[UserController::class,'showPage'])->name('home');
+
 Route::get('/insert',[UserController::class,'create'])->name('create');
+
+Route::get('/update',[UserController::class,'update'])->name('update');
+
+Route::get('/delete',[UserController::class,'deleteUser'])->name('delete');
