@@ -17,7 +17,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function(){
     Route::prefix('user')->group(function() {
         Route::get('/',[UserController::class,'index'])->name('admin.user');
         Route::get('create',[UserController::class,'create'])->name('admin.user.create');
-        Route::get('create',[UserController::class,'store']);
+        Route::post('create',[UserController::class,'store']);
     });
 });
 
