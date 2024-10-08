@@ -24,6 +24,9 @@
                         <label for="email">Email</label>
                         <input type="text" id="email" class="form-control">
 
+                        <label for="address">Address</label>
+                        <input type="text" id="address" class="form-control">
+
                         <label for="password">Password</label>
                         <input type="text" id="password" class="form-control">
 
