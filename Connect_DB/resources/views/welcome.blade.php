@@ -19,6 +19,15 @@
                         @csrf
                         <label for="name">Name</label>
                         <input type="text" id="name" class="form-control">
+
+                        <label for="email">Email</label>
+                        <input type="text" id="email" class="form-control">
+
+                        <label for="password">Password</label>
+                        <input type="text" id="password" class="form-control">
+
+                        <label for="password">Confirm Password</label>
+                        <input type="text" id="password" class="form-control">
                     </form>
                 </div>
             </div>
