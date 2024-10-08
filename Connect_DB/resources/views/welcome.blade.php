@@ -15,7 +15,11 @@
                     <h1>Welcome Page</h1>
                 </div>
                 <div class="card-body">
-                    
+                    <form action="#">
+                        @csrf
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control">
+                    </form>
                 </div>
             </div>
         </div>
