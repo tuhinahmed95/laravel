@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Home Page</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
