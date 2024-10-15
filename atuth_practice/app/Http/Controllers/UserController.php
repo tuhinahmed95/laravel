@@ -73,6 +73,10 @@ class UserController extends Controller
             'name'=>['required'],
             'email'=>['required']
         ]);
+        $users = User::findOrFail($id);
+        $users->update($request->all);
+
+        return redirect()->route('admin.user.list')->with('success', 'user update successfully');
     }
 
     /**
@@ -80,6 +84,9 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->delete();
+
+        return redirect()->route('admin.user.list')->with('success','user delete successfully');
     }
 }
