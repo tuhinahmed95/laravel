@@ -47,9 +47,12 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $users = User::findOrFail($id);
+
+        return view('admin.page.user.edit',compact('users'));
+
     }
 
     /**
@@ -57,7 +60,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('admin.page.user.edit',compact('users'));
     }
 
     /**
@@ -65,7 +69,10 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required']
+        ]);
     }
 
     /**
