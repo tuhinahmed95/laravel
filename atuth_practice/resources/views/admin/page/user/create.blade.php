@@ -13,14 +13,40 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h1>Create User</h1>
+                    <a href="#"><h1>Create User</h1></a>
                 </div>
                 <div class="card-body">
                     <form action="#">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" value="{{ old('name') }}">
+
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="emial" class="form-control" value="{{ old('email') }}">
+
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control">
+
+                            @error('password')
+                                <span class="text-danger">{{ $message  }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="submit" class="btn btn-primary">
                         </div>
                     </form>
                 </div>
