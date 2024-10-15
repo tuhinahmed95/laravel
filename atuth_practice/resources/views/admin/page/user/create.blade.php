@@ -20,7 +20,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
 
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
@@ -29,7 +29,7 @@
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="emial" class="form-control" value="{{ old('email') }}">
+                            <input type="email" name="email" id="emial" class="form-control" value="{{ old('email') }}">
 
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control">
 
                             @error('password')
                                 <span class="text-danger">{{ $message  }}</span>
