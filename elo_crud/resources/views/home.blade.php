@@ -14,21 +14,20 @@ All Users Data
                     <th>Email</th>
                     <th>Age</th>
                     <th>City</th>
-                    <th>View</th>
-                    <th>Update</th>
-                    <th>Delte</th>
+                    <th>Action</th>
                 </tr>
-
                 @foreach ($users as $user)
                     <tr>
-                        <td>$user->id</td>
-                        <td>$user->name</td>
-                        <td>$user->email</td>
-                        <td>$user->age</td>
-                        <td>$user->city</td>
-                        <td><a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a></td>
-                        <td><a href="{{ route('user.update',$user->id) }}" class="btn btn-success">Update</a></td>
-                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->age }}</td>
+                        <td>{{ $user->city }}</td>
+                        <td>
+                            <a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a>
+                            <a href="#" class="btn btn-success">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>

@@ -25,5 +25,9 @@ View Users Data
         <th>City :</th>
         <td>{{ $user->city }}</td>
     </tr>
+
 </table>
+<div>
+    <a href="{{ route('user.index') }}" class="btn btn-success">Back</a>
+</div>
 @endsection
