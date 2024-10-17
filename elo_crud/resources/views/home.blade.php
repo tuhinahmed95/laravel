@@ -5,8 +5,7 @@ All Users Data
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-8">
+
             <a href="" class="btn btn-success btn-sm mb-3">Add New</a>
             <table class="table table-striped table-borderd">
                 <tr>
@@ -24,6 +23,5 @@ All Users Data
 
                 @endforeach
             </table>
-        </div>
-    </div>
+      
 @endsection
