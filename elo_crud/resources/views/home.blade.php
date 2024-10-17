@@ -6,7 +6,7 @@ All Users Data
 
 @section('content')
 
-            <a href="{{ route('user.create') }}" class="btn btn-success btn-sm mb-3">Add New</a>
+            <a href="{{ route('user.create') }}" class="btn btn-success btn-sm mb-3 mt-2">Add New</a>
             <table class="table table-striped table-borderd">
                 <tr>
                     <th>Id</th>
@@ -26,8 +26,8 @@ All Users Data
                         <td>$user->email</td>
                         <td>$user->age</td>
                         <td>$user->city</td>
-                        <td><a href="" class="btn btn-warning">View</a></td>
-                        <td><a href="" class="btn btn-success">Update</a></td>
+                        <td><a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a></td>
+                        <td><a href="{{ route('user.update',$user->id) }}" class="btn btn-success">Update</a></td>
                         <td><a href="" class="btn btn-danger">Delete</a></td>
                     </tr>
                 @endforeach

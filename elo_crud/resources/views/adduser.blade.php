@@ -5,7 +5,8 @@ All Users Data
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    <form action="{{ route('user.store') }}" method="POST">
+        @csrf
         <div class="mb-3">
             <label for="username" class="form-labe">Name</label>
             <input type="text" class="form-control" name="username">

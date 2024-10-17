@@ -8,22 +8,22 @@ View Users Data
 <table class="table table-striped table-borderd">
     <tr>
         <th width="8opx">Name :</th>
-        <td></td>
+        <td>{{ $user->name }}</td>
     </tr>
 
     <tr>
         <th>Email :</th>
-        <td></td>
+        <td>{{ $user->email }}</td>
     </tr>
 
     <tr>
         <th>Age :</th>
-        <td></td>
+        <td>{{ $user->age }}</td>
     </tr>
 
     <tr>
         <th>City :</th>
-        <td></td>
+        <td>{{ $user->city }}</td>
     </tr>
 </table>
 @endsection

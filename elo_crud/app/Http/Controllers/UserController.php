@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-
+        return view('adduser');
     }
 
     /**
@@ -29,7 +29,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+        $user->name = $request->username;
+        $user->email = $request->useremail;
+        $user->age = $request->userage;
+        $user->city = $request->usercity;
+
+        $user->save();
+
+        return redirect()->route('user.index')->with('status','New Data Added Succesfully');
     }
 
     /**
@@ -46,7 +54,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('update');
     }
 
     /**
@@ -54,7 +62,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       
+
     }
 
     /**
