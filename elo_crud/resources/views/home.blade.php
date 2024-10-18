@@ -25,8 +25,8 @@ All Users Data
                         <td>{{ $user->city }}</td>
                         <td>
                             <a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a>
-                            <a href="#" class="btn btn-success">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('user.destroy',$user->id) }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('user.edit',$user->id) }}" class="btn btn-success">Edit</a>
                         </td>
                     </tr>
                 @endforeach

@@ -29,13 +29,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User;
-        $user->name = $request->username;
-        $user->email = $request->useremail;
-        $user->age = $request->userage;
-        $user->city = $request->usercity;
+        // $user = new User;
+        // $user->name = $request->username;
+        // $user->email = $request->useremail;
+        // $user->age = $request->userage;
+        // $user->city = $request->usercity;
 
-        $user->save();
+        // $user->save();
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+        User::create([
+            'name'=>$request->username,
+            'emial'=>$request->useremail,
+            'age'=>$request->userage,
+            'city'=>$request->usercity,
+        ]);
 
         return redirect()->route('user.index')->with('status','New Data Added Succesfully');
     }
@@ -54,7 +66,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
         return view('update',compact('user'));
     }
 
@@ -64,6 +76,21 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
 
+        $request->validate([
+            'username'=>['required'],
+            'useremail'=>['required'],
+            'userage'=>['required'],
+            'usercity'=>['required'],
+        ]);
+        $user = User::find($id);
+        $user->update([
+            'name'=>$request->username,
+            'email'=>$request->useremail,
+            'age'=>$request->userage,
+            'city'=>$request->usercity,
+        ]);
+
+        return redirect()->route('user.index')->with('status','user data updated successfully');
     }
 
     /**
@@ -71,6 +98,9 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('user.index')->with('status','user data delete successfully');
     }
 }
