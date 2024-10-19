@@ -5,7 +5,7 @@ Add User
 @endsection
 
 @section('content')
-<form action="#" method="POST">
+<form action="{{ route('user.store') }}" method="POST">
     @csrf
 
     <div class="form-group">
@@ -29,7 +29,7 @@ Add User
     </div>
 
     <div class="form-group">
-        <input type="submit" value="submit" class="btn btn-success">
+        <input type="submit" value="submit" class="btn btn-success mt-2">
     </div>
 </form>
 @endsection

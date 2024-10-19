@@ -35,7 +35,16 @@ class UserController extends Controller
             'age'=>['required'],
             'city'=>['required'],
         ]);
-        
+
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'city'=>$request->city,
+        ]);
+
+        return redirect()->route('user.index');
+
     }
 
     /**
