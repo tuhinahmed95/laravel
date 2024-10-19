@@ -14,7 +14,7 @@ Add User
     </div>
 
     <div class="form-group">
-        <label for="email">Name</label>
+        <label for="email">Email</label>
         <input type="email" name="email" class="form-control">
     </div>
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Add User
+Update User
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@ Add User
     </div>
 
     <div class="form-group">
-        <label for="email">Name</label>
+        <label for="email">Email</label>
         <input type="email" name="email" value="{{ $user->email }}" class="form-control">
     </div>
 
