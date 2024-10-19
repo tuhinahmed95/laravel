@@ -9,6 +9,7 @@ All Users Data
     <div class="card-header">User Data</div>
     <div class="card-body">
         <table class="table table-striped">
+            <a href="{{ route('user.create') }}" class="btn btn-success">Add New</a>
             <tr>
                 <th>Id</th>
                 <th>Name</th>

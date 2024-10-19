@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('adduser');
     }
 
     /**
@@ -29,7 +29,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+        
     }
 
     /**
