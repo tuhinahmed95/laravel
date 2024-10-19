@@ -37,14 +37,14 @@ class UserController extends Controller
 
         // $user->save();
         $request->validate([
-            'name'=>['required'],
-            'email'=>['required'],
-            'age'=>['required'],
-            'city'=>['required'],
+            'username'=>['required'],
+            'useremail'=>['required'],
+            'userage'=>['required'],
+            'usercity'=>['required'],
         ]);
         User::create([
             'name'=>$request->username,
-            'emial'=>$request->useremail,
+            'email'=>$request->useremail,
             'age'=>$request->userage,
             'city'=>$request->usercity,
         ]);
