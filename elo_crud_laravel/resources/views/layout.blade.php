@@ -12,8 +12,8 @@
     <div class="row">
         <div class="card">
 
-            <div class="card-header">
-                @yield('title')
+            <div class="card-header bg-success text-light d-block">
+               <h2> @yield('title')</h2>
             </div>
             <div class="card-body">
                 @yield('content')

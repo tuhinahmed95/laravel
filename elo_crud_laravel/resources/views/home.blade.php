@@ -16,7 +16,9 @@ All Users Data
                 <th>Email</th>
                 <th>Age</th>
                 <th>City</th>
-                <th>Action</th>
+                <th>View</th>
+                <th>Delete</th>
+                <th>Edit</th>
             </tr>
 
             @foreach ($users as $user)
@@ -26,11 +28,15 @@ All Users Data
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->age }}</td>
                     <td>{{ $user->city }}</td>
-                    <td>
-                        <a href="#" class="btn btn-warning">View</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                        <a href="#" class="btn btn-success">Edit</a>
-                    </td>
+                    <td><a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a></td>
+                    <td> <form action="{{ route ('user.destroy',$user->id ) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Delete</button>
+                    </form></td>
+
+                    <td> <a href="{{ route('user.edit',$user->id) }}" class="btn btn-success">Edit</a></td>
+
                 </tr>
             @endforeach
         </table>
