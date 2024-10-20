@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,7 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('home',compact('users'));
     }
 
     /**
@@ -19,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('adduser');
     }
 
     /**
@@ -27,7 +29,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'city'=>$request->city,
+        ]);
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -35,7 +51,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('viewuser',compact('user'));
     }
 
     /**

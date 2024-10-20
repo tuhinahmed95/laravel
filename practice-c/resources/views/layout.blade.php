@@ -10,10 +10,10 @@
 <body>
 <div class="container">
     <div class="row">
-        <h1 class="bg-success text-light">Eloquent Crud</h1>
+        <h1 class="bg-success text-light mt-2">Eloquent Crud</h1>
         <div class="card">
             <div class="card-header">
-                <h2>@yield('title')</h2>
+                <h2 class="bg-warning">@yield('title')</h2>
             </div>
             <div class="card-body">
                 @yield('content')

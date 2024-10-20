@@ -10,7 +10,7 @@ Add New User
         <h2 class="bg-warning text-white">Add Single User</h2>
     </div>
     <div class="card-body">
-        <form action="" method="POST">
+        <form action="{{ route('user.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
