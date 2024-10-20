@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Add New User
+Update User Here
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@ Add New User
         <h2 class="bg-warning text-white">Update Single User </h2>
     </div>
     <div class="card-body">
-        <form action="{{ route('user.update',),$user->id }}" method="POST">
+        <form action="{{ route('user.update',$user->id )}}" method="POST">
             @method('PUT')
             @csrf
             <div class="form-group">

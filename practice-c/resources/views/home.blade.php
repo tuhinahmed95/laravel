@@ -32,7 +32,13 @@
                     <td>{{ $user->city }}</td>
                     <td><a href="{{ route('user.show',$user->id) }}" class="btn btn-success">View</a></td>
                     <td><a href="{{ route('user.edit',$user->id) }}" class="btn btn-warning text-light">Edit</a></td>
-                    <td><a href="#" class="btn btn-danger">Delete</a></td>
+                    <td>
+                        <form action="{{ route('user.destroy',$user->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>
