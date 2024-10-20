@@ -31,7 +31,7 @@
                     <td>{{ $user->age }}</td>
                     <td>{{ $user->city }}</td>
                     <td><a href="{{ route('user.show',$user->id) }}" class="btn btn-success">View</a></td>
-                    <td><a href="#" class="btn btn-warning text-light">Edit</a></td>
+                    <td><a href="{{ route('user.edit',$user->id) }}" class="btn btn-warning text-light">Edit</a></td>
                     <td><a href="#" class="btn btn-danger">Delete</a></td>
                 </tr>
             @endforeach

@@ -10,26 +10,27 @@ Add New User
         <h2 class="bg-warning text-white">Update Single User </h2>
     </div>
     <div class="card-body">
-        <form action="{{ route('user.update',) }}" method="POST">
+        <form action="{{ route('user.update',),$user->id }}" method="POST">
+            @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" value="{{ $user->name }}" name="name" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" value="{{ $user->email }}" name="email" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="number" name="age" class="form-control">
+                <input type="number" value="{{ $user->age }}" name="age" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="city">City</label>
-                <input type="text" name="city" class="form-control">
+                <input type="text" value="{{ $user->city }}" name="city" class="form-control">
             </div>
 
             <div class="form-group">
