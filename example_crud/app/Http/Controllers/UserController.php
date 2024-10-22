@@ -41,6 +41,8 @@ class UserController extends Controller
             'age'=>$request->age,
             'city'=>$request->city,
         ]);
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -57,7 +59,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('update',compact('user'));
     }
 
     /**
@@ -65,7 +68,22 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+
+        $user = User::find($id);
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'city'=>$request->city,
+        ]);
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -73,6 +91,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }
