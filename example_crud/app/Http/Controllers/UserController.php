@@ -29,7 +29,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'city'=>$request->city,
+        ]);
     }
 
     /**
@@ -37,7 +48,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('singleuser',compact('user'));
     }
 
     /**

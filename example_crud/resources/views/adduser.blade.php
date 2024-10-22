@@ -6,7 +6,7 @@
         <h3 class="bg-primary text-light">Add User</h3>
     </div>
     <div class="card-body">
-        <form action="#" method="POST">
+        <form action="{{ route('user.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
