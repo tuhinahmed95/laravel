@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('phone');
             $table->string('city');
+            $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });
