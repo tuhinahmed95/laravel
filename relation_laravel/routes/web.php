@@ -7,4 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/student',[StudentController::class],'show');
+Route::get('/student', [StudentController::class, 'show']);
+
