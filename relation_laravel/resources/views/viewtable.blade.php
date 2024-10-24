@@ -27,7 +27,9 @@
                         <td>{{ $student->id }}</td>
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->age }}</td>
-                        <td>{{ $student->id }}</td>
+                        <td>{{ $student->phone }}</td>
+                        <td>{{ $student->city }}</td>
+                        {{-- <td>{{ $student->id }}</td> --}}
                     </tr>
                     @endforeach
                 </table>
