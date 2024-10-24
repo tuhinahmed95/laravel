@@ -20,15 +20,16 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Age</th>
-                        <th>Student_Id</th>
+                        <th>Phone</th>
+                        <th>City</th>
                     </tr>
                     @foreach ($students as $student)
                     <tr>
                         <td>{{ $student->id }}</td>
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->age }}</td>
-                        <td>{{ $student->phone }}</td>
-                        <td>{{ $student->city }}</td>
+                        <td>{{ $student->contact->phone }}</td>
+                        <td>{{ $student->contact->city }}</td>
                         {{-- <td>{{ $student->id }}</td> --}}
                     </tr>
                     @endforeach
