@@ -10,11 +10,13 @@
 <body>
 <div class="container">
     <div class="row">
-        <a href="#" class="btn btn-success">Add New</a>
         <div class="card">
+
             <div class="card-header">
                 <h1 class="bg-success d-inline">Table Relation</h1>
             </div>
+        <a href="#" class="btn btn-success d-inline">Add New</a>
+
             <div class="card-body">
                 <table class="table table-striped">
                     <tr>
