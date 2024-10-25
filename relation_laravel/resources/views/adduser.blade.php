@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <form action="#" method="POST">
+        <form action="{{ route('store') }}" method="POST">
             @csrf
             <div class="from-group">
                 <label for="name">Name</label>
@@ -19,13 +19,12 @@
             </div>
 
             <div class="from-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control">
+                <label for="age">Age</label>
+                <input type="text" name="age" class="form-control">
             </div>
 
             <div class="from-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control">
+                <input type="submit" value="submit" class="form-control btn btn-success">
             </div>
         </form>
     </div>

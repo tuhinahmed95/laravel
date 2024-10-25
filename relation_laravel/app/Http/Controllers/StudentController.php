@@ -13,4 +13,8 @@ class StudentController extends Controller
         return view('viewtable',compact('students'));
 
     }
+
+    public function create(){
+        return view('adduser');
+    }
 }
