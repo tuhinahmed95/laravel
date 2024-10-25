@@ -10,6 +10,7 @@
 <body>
 <div class="container">
     <div class="row">
+        <a href="#" class="btn btn-success">Add New</a>
         <div class="card">
             <div class="card-header">
                 <h1 class="bg-success d-inline">Table Relation</h1>
@@ -22,6 +23,7 @@
                         <th>Age</th>
                         <th>Phone</th>
                         <th>City</th>
+                        <th>Student_ID</th>
                     </tr>
                     @foreach ($students as $student)
                     <tr>
@@ -30,7 +32,7 @@
                         <td>{{ $student->age }}</td>
                         <td>{{ $student->contact->phone }}</td>
                         <td>{{ $student->contact->city }}</td>
-                        {{-- <td>{{ $student->id }}</td> --}}
+                        <td>{{ $student->contact->student_id }}</td>
                     </tr>
                     @endforeach
                 </table>
