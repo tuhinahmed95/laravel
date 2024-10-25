@@ -17,4 +17,15 @@ class StudentController extends Controller
     public function create(){
         return view('adduser');
     }
+
+    public function store(Request $request){
+            $request->validate([
+                'name'=>$request->name,
+                'age'=>$request->age,
+            ]);
+
+            Student::create([
+                
+            ]);
+    }
 }
