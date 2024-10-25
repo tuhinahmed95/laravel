@@ -20,12 +20,13 @@ class StudentController extends Controller
 
     public function store(Request $request){
             $request->validate([
-                'name'=>$request->name,
-                'age'=>$request->age,
+                'name'=>['required'],
+                'age'=>['required'],
             ]);
 
             Student::create([
-                
+                'name'=>$request->name,
+                'age'=>$request->age,
             ]);
     }
 }

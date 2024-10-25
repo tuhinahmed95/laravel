@@ -15,7 +15,7 @@
             <div class="card-header">
                 <h1 class="bg-success d-inline">Table Relation</h1>
             </div>
-        <a href="{{ route('create') }}" class="btn btn-success d-inline">Add New</a>
+        <a href="{{ route('student.create') }}" class="btn btn-success d-inline">Add New</a>
 
             <div class="card-body">
                 <table class="table table-striped">

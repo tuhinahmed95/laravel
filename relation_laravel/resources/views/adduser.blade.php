@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <form action="{{ route('store') }}" method="POST">
+        <form action="{{ route('student.store') }}" method="POST">
             @csrf
             <div class="from-group">
                 <label for="name">Name</label>

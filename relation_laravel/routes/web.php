@@ -9,4 +9,5 @@ Route::get('/', function () {
 
 Route::get('/student', [StudentController::class, 'show']);
 
-Route::get('/adduser',[StudentController::class,'create'])->name('adduser');
+Route::get('/student/create',[StudentController::class,'create'])->name('create');
+Route::get('/student/store',[StudentController::class,'store'])->name('store');
