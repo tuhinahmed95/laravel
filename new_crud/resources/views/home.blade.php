@@ -35,7 +35,7 @@ Here All Data
             <form action="{{ route('user.destroy',$user->id) }}" method="POST">
                 @method('DELETE')
                 @csrf
-                <a href="" class="btn btn-danger">Delete</a>
+                <button class="btn btn-danger">Delete</button>
             </form>
         </td>
     </tr>
