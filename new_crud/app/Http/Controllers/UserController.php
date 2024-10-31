@@ -59,7 +59,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('update');
     }
 
     /**
@@ -67,7 +67,19 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'age'=>['required'],
+            'city'=>['required'],
+        ]);
+        $user = User::find($id);
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'city'=>$request->city,
+        ]);
     }
 
     /**

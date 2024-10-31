@@ -28,6 +28,9 @@ Here All Data
         <td>
             <a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a>
         </td>
+        <td>
+            <a href="{{ route('user.edit',$user->id) }}" class="btn btn-success">Edit</a>
+        </td>
     </tr>
 
     @endforeach
