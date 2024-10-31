@@ -31,6 +31,13 @@ Here All Data
         <td>
             <a href="{{ route('user.edit',$user->id) }}" class="btn btn-success">Edit</a>
         </td>
+        <td>
+            <form action="{{ route('user.destroy',$user->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <a href="" class="btn btn-danger">Delete</a>
+            </form>
+        </td>
     </tr>
 
     @endforeach

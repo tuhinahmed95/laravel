@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Add User
+Update User Data
 @endsection
 
 @section('content')
