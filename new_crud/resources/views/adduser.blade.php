@@ -7,7 +7,7 @@ Add User
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="#" method="POST">
+        <form action="{{ route('user.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>

@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    @yield('title')
+                    <h1 class="bg-success d-inline">@yield('title')</h1>
                 </div>
                 <div class="card-body">
                     @yield('content')
