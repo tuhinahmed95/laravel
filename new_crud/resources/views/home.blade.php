@@ -25,6 +25,9 @@ Here All Data
         <td>{{ $user->email }}</td>
         <td>{{ $user->age }}</td>
         <td>{{ $user->city }}</td>
+        <td>
+            <a href="{{ route('user.show',$user->id) }}" class="btn btn-warning">View</a>
+        </td>
     </tr>
 
     @endforeach
