@@ -59,7 +59,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        return view('update');
+        $user = User::find($id);
+        return view('update',compact('user'));
     }
 
     /**
@@ -80,6 +81,8 @@ class UserController extends Controller
             'age'=>$request->age,
             'city'=>$request->city,
         ]);
+
+        return redirect()->route('user.index');
     }
 
     /**
