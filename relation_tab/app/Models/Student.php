@@ -9,6 +9,6 @@ class Student extends Model
     protected $fillable = ['name','email','address'];
 
     public function contact(){
-        return $this->hasOne(Contact::class);
+        return $this->hasOne(Contact::class,'sid');
     }
 }
