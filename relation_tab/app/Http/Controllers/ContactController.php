@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,7 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::with('student')->get();
+        return view('home',compact('contacts'));
     }
 
     /**

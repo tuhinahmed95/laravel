@@ -8,7 +8,7 @@ class Student extends Model
 {
     protected $fillable = ['name','email','address'];
 
-    public function contact(){
-        return $this->hasOne(Contact::class,'sid');
+    public function contacts(){
+        return $this->hasMany(Contact::class,'sid');
     }
 }
