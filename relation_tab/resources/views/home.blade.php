@@ -6,10 +6,7 @@ All Data Here
 
 @section('content')
 <a href="{{ route('student.create') }}" class="btn btn-success">Add New Student</a>
-<div class="d-flex justify-content-end">
-<a href="{{ route('contact.create') }}" class="btn btn-success mb-2">Add New Student</a>
 
-</div>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
@@ -19,6 +16,7 @@ All Data Here
         <th>PHONE</th>
         <th>GPA</th>
         <th>COLLEGE_NAME</th>
+        <th>Action</th>
     </tr>
     @foreach ($students as $student)
     <tr>
@@ -29,6 +27,11 @@ All Data Here
         <td>{{ $student->contact->phone }}</td>
         <td>{{ $student->contact->gpa}}</td>
         <td>{{ $student->contact->college_name }}</td>
+        <td>
+            <a href="#" class="btn btn-warning">View</a>
+            <a href="#" class="btn btn-success">Edit</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+        </td>
     </tr>
     @endforeach
 </table>
