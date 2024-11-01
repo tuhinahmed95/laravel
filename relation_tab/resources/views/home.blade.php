@@ -6,6 +6,10 @@ All Data Here
 
 @section('content')
 <a href="{{ route('student.create') }}" class="btn btn-success">Add New Student</a>
+<div class="d-flex justify-content-end">
+<a href="{{ route('contact.create') }}" class="btn btn-success mb-2">Add New Student</a>
+
+</div>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
