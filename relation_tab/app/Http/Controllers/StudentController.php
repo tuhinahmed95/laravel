@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('addstudent');
     }
 
     /**
@@ -30,7 +30,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'adress'=>['required'],
+        ]);
+
+        Student::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'address'=>$request->address,
+        ]);
     }
 
     /**

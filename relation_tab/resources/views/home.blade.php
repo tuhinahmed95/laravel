@@ -5,6 +5,7 @@ All Data Here
 @endsection
 
 @section('content')
+<a href="{{ route('student.create') }}" class="btn btn-success">Add New Student</a>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
