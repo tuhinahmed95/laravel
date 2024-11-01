@@ -33,7 +33,7 @@ class StudentController extends Controller
         $request->validate([
             'name'=>['required'],
             'email'=>['required'],
-            'adress'=>['required'],
+            'address'=>['required'],
         ]);
 
         Student::create([
@@ -41,6 +41,7 @@ class StudentController extends Controller
             'email'=>$request->email,
             'address'=>$request->address,
         ]);
+        return redirect()->route('student.index');
     }
 
     /**
