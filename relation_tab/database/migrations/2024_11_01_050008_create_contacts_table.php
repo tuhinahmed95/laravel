@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->integer('phone');
+            $table->float('gpa');
+            $table->string('college_name');
+            $table->foreignId('sid')->references('id')->on('students');
             $table->timestamps();
         });
     }
