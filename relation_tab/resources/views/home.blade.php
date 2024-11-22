@@ -23,11 +23,11 @@ All Data Here
         <td>{{ $student->address }}</td>
         <td>
             @foreach ($student->contacts as $contact)
-            {{ $contact->phone }} , {{ $contact->gpa }} , {{ $contact->college_name }}
+            {{ $contact->phone }} | {{ $contact->gpa }} | {{ $contact->college_name }} | 
              @endforeach
         </td>
 
-       
+
     </tr>
     @endforeach
 </table>
