@@ -5,12 +5,16 @@ All Data Here
 @endsection
 
 @section('content')
+<h3><a href="{{ route('student.create') }}" class="btn btn-success">Add New</a></h3>
 <table class="table table-striped">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Email</th>
         <th>City</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     @foreach ($students as $student)
     <tr>
@@ -18,6 +22,8 @@ All Data Here
         <td>{{ $student->name }}</td>
         <td>{{ $student->email }}</td>
         <td>{{ $student->city }}</td>
+        <td><a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a></td>
+        <td><a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a></td>
     </tr>
     @endforeach
 </table>
