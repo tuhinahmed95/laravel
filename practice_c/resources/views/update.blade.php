@@ -1,12 +1,13 @@
 @extends('layout')
 
 @section('title')
-Add New User
+Update User
 @endsection
 
 @section('content')
-    <form action="{{ route('student.update'),$students->id }}" method="POST">
+    <form action="{{ route('student.update',$students->id) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" class="form-control" value="{{ $students->name }}">
@@ -19,7 +20,7 @@ Add New User
 
         <div class="form-group">
             <label for="city">City</label>
-            <input type="text" name="city" class="form-control" value="{{ $student->city }}">
+            <input type="text" name="city" class="form-control" value="{{ $students->city }}">
         </div>
 
         <div class="form-group">

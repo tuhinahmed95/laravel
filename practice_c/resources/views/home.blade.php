@@ -23,7 +23,14 @@ All Data Here
         <td>{{ $student->email }}</td>
         <td>{{ $student->city }}</td>
         <td><a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a></td>
-        <td><a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a></td>
+        <td><a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Upadte</a></td>
+        <td>
+            <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </td>
     </tr>
     @endforeach
 </table>
