@@ -48,7 +48,8 @@ class PostController extends Controller
         $ext = $image->getClientOriginalExtension();
         $imageName = time(). '.'.$ext;
         $image ->move(public_path().'/uloads',$imageName);
-        $user = Post::create([
+
+        $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $imageName,
@@ -56,8 +57,8 @@ class PostController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'User Created Successfully',
-            'user' => $user,
+            'message' => 'Post Created Successfully',
+            'post' => $post,
         ], 201);
     }
 
@@ -66,7 +67,18 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data['post'] = Post::select(
+            'id',
+            'title',
+            'description',
+            'image'
+        )->where(['id'=>$id])->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Your Single Post',
+            'data' => $data,
+        ], 201);
     }
 
     /**
@@ -74,7 +86,39 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'title' => 'required',
+                'description' => 'required',
+                'image' => 'required|mimies:png,jpg,jpeg,gif',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation Error',
+                'errors' => $validateUser->errors()->all()
+            ], 401);
+        }
+
+        $image = $request->image;
+        $ext = $image->getClientOriginalExtension();
+        $imageName = time(). '.'.$ext;
+        $image ->move(public_path().'/uloads',$imageName);
+
+        $post = Post::where(['id'=>$id])->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $imageName,
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Post Created Successfully',
+            'post' => $post,
+        ], 201);
     }
 
     /**
