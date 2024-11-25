@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -12,7 +14,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $data['posts'] = Post::all();
+        return response()->json([
+            'status'=>true,
+            'message'=>'All Post Data .',
+            'data' => $data,
+        ],200);
     }
 
     /**
@@ -20,7 +27,38 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'title' => 'required',
+                'description' => 'required',
+                'image' => 'required|mimies:png,jpg,jpeg,gif',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation Error',
+                'errors' => $validateUser->errors()->all()
+            ], 401);
+        }
+
+        $image = $request->image;
+        $ext = $image->getClientOriginalExtension();
+        $imageName = time(). '.'.$ext;
+        $image ->move(public_path().'/uloads',$imageName);
+        $user = Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $imageName,
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'User Created Successfully',
+            'user' => $user,
+        ], 201);
     }
 
     /**

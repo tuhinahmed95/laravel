@@ -33,7 +33,7 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password), // পাসওয়ার্ড হ্যাশ করা হলো
+            'password' => Hash::make($request->password),
         ]);
 
         return response()->json([
