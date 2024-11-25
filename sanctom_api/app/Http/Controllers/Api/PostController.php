@@ -14,12 +14,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $data['posts'] = Post::all();
+        $posts = Post::all();
         return response()->json([
-            'status'=>true,
-            'message'=>'All Post Data .',
-            'data' => $data,
-        ],200);
+            'status' => true,
+            'message' => 'All Post Data.',
+            'data' => $posts,
+        ], 200);
     }
 
     /**
@@ -32,7 +32,7 @@ class PostController extends Controller
             [
                 'title' => 'required',
                 'description' => 'required',
-                'image' => 'required|mimies:png,jpg,jpeg,gif',
+                'image' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
             ]
         );
 
@@ -44,10 +44,10 @@ class PostController extends Controller
             ], 401);
         }
 
-        $image = $request->image;
-        $ext = $image->getClientOriginalExtension();
-        $imageName = time(). '.'.$ext;
-        $image ->move(public_path().'/uloads',$imageName);
+        // Handle Image Upload
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('/uploads'), $imageName);
 
         $post = Post::create([
             'title' => $request->title,
@@ -67,18 +67,20 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $data['post'] = Post::select(
-            'id',
-            'title',
-            'description',
-            'image'
-        )->where(['id'=>$id])->get();
+        $post = Post::select('id', 'title', 'description', 'image')->find($id);
+
+        if (!$post) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Post not found',
+            ], 404);
+        }
 
         return response()->json([
             'status' => true,
             'message' => 'Your Single Post',
-            'data' => $data,
-        ], 201);
+            'data' => $post,
+        ], 200);
     }
 
     /**
@@ -108,29 +110,26 @@ class PostController extends Controller
         if (!$post) {
             return response()->json([
                 'status' => false,
-                'message' => 'Post not found'
+                'message' => 'Post not found',
             ], 404);
         }
 
-        // Image handling
         $imageName = $post->image; // Default image
         if ($request->hasFile('image')) {
             $path = public_path('/uploads');
 
-            // Delete old image
-            $old_file = $path . '/' . $post->image;
-            if (file_exists($old_file)) {
-                unlink($old_file);
+            // Delete old image if exists
+            $oldFile = $path . '/' . $post->image;
+            if (file_exists($oldFile)) {
+                unlink($oldFile);
             }
 
             // Upload new image
             $image = $request->file('image');
-            $ext = $image->getClientOriginalExtension();
-            $imageName = time() . '.' . $ext;
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
         }
 
-        // Update post
         $post->update([
             'title' => $request->title,
             'description' => $request->description,
@@ -148,18 +147,27 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-
     {
-        $imagePath = Post::select('image')->where('id',$id)->get();
-        $filePath = public_path(). '/uploads'.$imagePath[0]['image'];
-        unlink($filePath);
+        $post = Post::find($id);
 
-        $post = Post::where('id',$id)->delete();
+        if (!$post) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Post not found',
+            ], 404);
+        }
+
+        // Delete image if exists
+        $filePath = public_path('/uploads/' . $post->image);
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+        $post->delete();
 
         return response()->json([
             'status' => true,
-            'message' => 'Your Post Has been Remove',
-            'post' => $post,
+            'message' => 'Your Post has been removed',
         ], 200);
     }
 }
