@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -29,7 +29,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'city'=>['required'],
+        ]);
+
+        Student::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'city'=>$request->city,
+        ]);
+
+        return redirect()->route('student.index');
     }
 
     /**
@@ -37,7 +49,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('view',compact('student'));
     }
 
     /**
@@ -45,7 +58,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('edit',compact('student'));
     }
 
     /**
@@ -53,7 +67,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required'],
+            'city'=>['required'],
+        ]);
+
+        
     }
 
     /**

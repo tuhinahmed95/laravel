@@ -22,6 +22,12 @@ All Data Show Here
             <td>{{ $student->name }}</td>
             <td>{{ $student->email }}</td>
             <td>{{ $student->city }}</td>
+            <td>
+                <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+            </td>
+            <td>
+                <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Update</a>
+            </td>
         </tr>
         @endforeach
     </table>

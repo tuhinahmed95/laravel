@@ -5,7 +5,7 @@ Add New Data
 @endsection
 
 @section('content')
-<form action="" method="POST">
+<form action="{{ route('student.store') }}" method="POST">
     @csrf
     <div class="form-group">
         <label for="name">Name</label>
@@ -23,7 +23,7 @@ Add New Data
     </div>
 
     <div class="form-group">
-        <input type="submit" class="form-control" name="submit" value="Submit">
+        <input type="submit" class="form-control btn btn-success" name="submit" value="Submit">
     </div>
 </form>
 @endsection
