@@ -29,7 +29,7 @@ All Data Show Here
                 <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Update</a>
             </td>
             <td>
-                <form action="{{ route('student.destroy',$student->id) }}">
+                <form action="{{ route('student.destroy',$student->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">Delete</button>
