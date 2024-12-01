@@ -28,6 +28,13 @@ All Data Show Here
             <td>
                 <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Update</a>
             </td>
+            <td>
+                <form action="{{ route('student.destroy',$student->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </table>

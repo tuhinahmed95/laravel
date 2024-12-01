@@ -73,7 +73,14 @@ class StudentController extends Controller
             'city'=>['required'],
         ]);
 
-        
+        $student = Student::find($id);
+        $student->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'city'=>$request->city,
+        ]);
+
+        return redirect()->route('student.index');
     }
 
     /**
@@ -81,6 +88,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('student.index');
     }
 }
