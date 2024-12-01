@@ -17,7 +17,7 @@ class PostController extends Controller
         $posts = Post::all();
         return response()->json([
             'status' => true,
-            'message' => 'All Post Data.',
+            'message' => 'All Post Data',
             'data' => $posts,
         ], 200);
     }
@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validateUser = Validator::make(
+        $validator = Validator::make(
             $request->all(),
             [
                 'title' => 'required',
@@ -36,18 +36,17 @@ class PostController extends Controller
             ]
         );
 
-        if ($validateUser->fails()) {
+        if ($validator->fails()) {
             return response()->json([
                 'status' => false,
                 'message' => 'Validation Error',
-                'errors' => $validateUser->errors()->all()
-            ], 401);
+                'errors' => $validator->errors()->all(),
+            ], 422);
         }
 
-        // Handle Image Upload
-        $image = $request->file('image');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('/uploads'), $imageName);
+        
+        $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path('/uploads'), $imageName);
 
         $post = Post::create([
             'title' => $request->title,
@@ -67,7 +66,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::select('id', 'title', 'description', 'image')->find($id);
+        $post = Post::find($id);
 
         if (!$post) {
             return response()->json([
@@ -78,7 +77,7 @@ class PostController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Your Single Post',
+            'message' => 'Single Post Data',
             'data' => $post,
         ], 200);
     }
@@ -88,7 +87,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validateUser = Validator::make(
+        $validator = Validator::make(
             $request->all(),
             [
                 'title' => 'required',
@@ -97,12 +96,12 @@ class PostController extends Controller
             ]
         );
 
-        if ($validateUser->fails()) {
+        if ($validator->fails()) {
             return response()->json([
                 'status' => false,
                 'message' => 'Validation Error',
-                'errors' => $validateUser->errors()->all()
-            ], 401);
+                'errors' => $validator->errors()->all(),
+            ], 422);
         }
 
         $post = Post::find($id);
@@ -114,20 +113,16 @@ class PostController extends Controller
             ], 404);
         }
 
-        $imageName = $post->image; // Default image
-        if ($request->hasFile('image')) {
-            $path = public_path('/uploads');
 
-            // Delete old image if exists
-            $oldFile = $path . '/' . $post->image;
-            if (file_exists($oldFile)) {
-                unlink($oldFile);
+        $imageName = $post->image;
+        if ($request->hasFile('image')) {
+            $oldFilePath = public_path('/uploads/' . $post->image);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
             }
 
-            // Upload new image
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move($path, $imageName);
+            $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('/uploads'), $imageName);
         }
 
         $post->update([
@@ -157,7 +152,6 @@ class PostController extends Controller
             ], 404);
         }
 
-        // Delete image if exists
         $filePath = public_path('/uploads/' . $post->image);
         if (file_exists($filePath)) {
             unlink($filePath);
@@ -167,7 +161,7 @@ class PostController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Your Post has been removed',
+            'message' => 'Post Deleted Successfully',
         ], 200);
     }
 }
