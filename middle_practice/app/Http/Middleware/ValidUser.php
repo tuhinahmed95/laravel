@@ -4,9 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class checkip
+class ValidUser
 {
     /**
      * Handle an incoming request.
@@ -15,6 +16,12 @@ class checkip
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        echo "<h2 class='bg-primary'>We Are In Middleware ValidUser</h2>";
+        if(Auth::check()){
+            return $next($request);
+
+        }else{
+            return redirect()->route('login');
+        }
     }
 }

@@ -12,6 +12,8 @@ class UserController extends Controller
         $data = $request->validate([
             'name'=> 'required',
             'email'=>'required|email',
+            'role'=>'required',
+            'age'=>'required',
             'password'=>'required|confirmed'
         ]);
 
@@ -35,11 +37,15 @@ class UserController extends Controller
     }
 
     public function dashboardPage(){
-        if(Auth::check()){
+
             return view('dashboard');
-        }else{
-            return redirect()->route('login');
-        }
+
+    }
+
+    public function innerPage(){
+
+            return view('inner');
+       
     }
 
     public function logout(){

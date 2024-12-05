@@ -29,6 +29,16 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <input type="text" name="role" class="form-control" id="role">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="age" class="form-label"> Age</label>
+                            <input type="number" name="age" class="form-control" id="age">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="text" name="password" class="form-control" id="password">
                         </div>
