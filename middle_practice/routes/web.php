@@ -9,6 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/user', function () {
+    return view('user')->name('user');
+});
+
 Route::view('register','register')->name('register') ->middleware(ValidUser::class);
 Route::post('registerSave',[UserController::class,'register'])->name('registerSave');
 
@@ -23,10 +27,10 @@ Route::post('loginMatch',[UserController::class,'login'])->name('loginMatch');
 //           ->middleware(['IsUserValid:admin',TestUser::class]);
 
 Route::get('dashboard',[UserController::class,'dashboardPage'])->name('dashboard')
-          ->middleware(['auth']);
+          ->middleware(['auth','IsUserValid:admin']);
 
 Route::get('dashboard/inner',[UserController::class,'innerPage'])->name('inner')
-          ->middleware(['auth']);
+          ->middleware(['auth','IsUserValid:admin']);
 
 // Route::middleware('ok-user')->group(function(){
 //     Route::get('dashboard',[UserController::class,'dashboardPage'])->name('dashboard');

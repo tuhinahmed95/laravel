@@ -19,12 +19,22 @@ class ValidUser
         echo "<h2 class='bg-primary'>We Are In Middleware ValidUser</h2>";
         echo "<h2 class='bg-info'>$role</h2>";
 
-        if(Auth::check() && Auth::user()->role == $role){
+        if(Auth::user()->role == $role){
             return $next($request);
 
-            }else{
+            }elseif(Auth::user()->role == 'reader'){
+                return redirect()->route('user');
+
+            } else{
                 return redirect()->route('login');
             }
+
+        // if(Auth::check() && Auth::user()->role == $role){
+        //     return $next($request);
+
+        //     }else{
+        //         return redirect()->route('login');
+        //     }
 
 
     }
