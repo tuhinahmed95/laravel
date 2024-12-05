@@ -14,10 +14,17 @@ class ValidUser
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
         echo "<h2 class='bg-primary'>We Are In Middleware ValidUser</h2>";
+        echo "<h2 class='bg-info'>$role</h2>";
+
+        if(Auth::check() && Auth::user()->role == $role){
             return $next($request);
+
+            }else{
+                return redirect()->route('login');
+            }
 
 
     }

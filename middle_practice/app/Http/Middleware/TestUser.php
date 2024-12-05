@@ -17,11 +17,9 @@ class TestUser
     public function handle(Request $request, Closure $next): Response
     {
         echo "<h3 class='bg-warning'>Hi,I Come From Testuser</h3>";
-        if(Auth::check()){
+
         return $next($request);
 
-        }else{
-            return redirect()->route('login');
-        }
+      
     }
 }
