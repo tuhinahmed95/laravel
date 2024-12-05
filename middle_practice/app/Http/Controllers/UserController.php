@@ -37,15 +37,12 @@ class UserController extends Controller
     }
 
     public function dashboardPage(){
-
             return view('dashboard');
 
     }
 
     public function innerPage(){
-
             return view('inner');
-       
     }
 
     public function logout(){
