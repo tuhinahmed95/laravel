@@ -19,6 +19,10 @@ class ValidUser
         echo "<h2 class='bg-primary'>We Are In Middleware ValidUser</h2>";
             return $next($request);
 
-       
+
+    }
+    public function terminate(Request $request, Response  $respones): void
+    {
+        // echo "<h2 class='bg-danger'>I Come From Terminate Middleware</h2>";
     }
 }
