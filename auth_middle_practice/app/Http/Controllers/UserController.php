@@ -33,4 +33,17 @@ class UserController extends Controller
             return redirect()->route('dashboard');
         }
     }
+
+    public function dashboardPage(){
+        return view('dashboard');
+    }
+
+    public function inner(){
+        return view('inner');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return view('login');
+    }
 }

@@ -13,12 +13,12 @@
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <h1 class="bg-info ">Dashboard</h1>
+                <h1>Inner Page</h1>
             </div>
             <div class="card-body">
                 <div>
-                    <a href="{{ route('inner') }}" class="btn btn-success">InnerPage</a>
-                    <a href="#" class="btn btn-danger">Logout</a>
+                    <a href="#" class="btn btn-success">NextPage</a>
+                    <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>
