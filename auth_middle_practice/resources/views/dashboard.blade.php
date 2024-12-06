@@ -18,7 +18,7 @@
             <div class="card-body">
                 <div>
                     <a href="{{ route('inner') }}" class="btn btn-success">InnerPage</a>
-                    <a href="#" class="btn btn-danger">Logout</a>
+                    <a href="/" class="btn btn-danger">Back</a>
                 </div>
             </div>
         </div>
