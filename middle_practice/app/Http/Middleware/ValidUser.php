@@ -22,10 +22,7 @@ class ValidUser
         if(Auth::user()->role == $role){
             return $next($request);
 
-            }elseif(Auth::user()->role == 'reader'){
-                return redirect()->route('user');
-
-            } else{
+         } else{
                 return redirect()->route('login');
             }
 
