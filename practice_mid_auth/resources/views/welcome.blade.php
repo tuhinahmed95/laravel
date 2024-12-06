@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div>
-                    <a href="" class="btn btn-success">Registration</a>
+                    <a href="{{ route('register') }}" class="btn btn-success">Registration</a>
                     <a href="" class="btn btn-info">Login</a>
                 </div>
             </div>
