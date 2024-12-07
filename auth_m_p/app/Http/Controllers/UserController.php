@@ -42,4 +42,9 @@ class UserController extends Controller
     public function inner (){
         return view('inner');
     }
+
+    public function logout(){
+        Auth::logout();
+        return view('login');
+    }
 }

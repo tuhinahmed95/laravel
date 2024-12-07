@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        <a href="" class="btn btn-success">InnerPage</a>
+                        <a href="{{ route('inner') }}" class="btn btn-success">InnerPage</a>
                         <a href="/" class="btn btn-info">Back</a>
                     </div>
                 </div>
