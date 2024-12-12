@@ -9,6 +9,20 @@
 
 </head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1>DashBoard</h1>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-success">UserCreate</a>
+                    <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

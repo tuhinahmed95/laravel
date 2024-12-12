@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -22,14 +23,24 @@ class AuthController extends Controller
     }
 
     public function login (Request $request){
-        $request->validate([
+        $creadintial = $request->validate([
             'email'=>'required|email',
             'password'=>'required'
         ]);
+        if(Auth::attempt($creadintial))
         return redirect()->route('dashboard');
     }
 
     public function dashboardPage(){
         return view('dashboard');
+    }
+
+    public function user(){
+        return view('user');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return view('login');
     }
 }
