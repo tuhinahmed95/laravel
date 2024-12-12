@@ -23,8 +23,10 @@
                             <tr>
                                 <th>Student Name</th>
                                 <th>Email</th>
-                                <th>Courses</th>
+                                <th>Course Name</th>
                                 <th>View</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,6 +43,16 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Edit</a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

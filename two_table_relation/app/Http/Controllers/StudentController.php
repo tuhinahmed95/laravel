@@ -69,7 +69,9 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::with('courses')->find($id);
+        return view('updatestudent',compact('student'));
+
     }
 
     /**
@@ -77,7 +79,25 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:students,email',
+            'courses' => 'required|array',
+            'courses.*' => 'required|string', // কোর্সের নামগুলো
+        ]);
+        $student = Student::find($id);
+        $student->update([
+            'name'=>$validate['name'],
+            'email'=>$validate['email']
+        ]);
+
+        $student->courses()->delete();
+        foreach($validate['courses'] as $courseName){
+            $student->courses()->create([
+                'course_name'=> $courseName,
+            ]);
+        }
+        return redirect()->route('student.index');
     }
 
     /**
@@ -85,6 +105,9 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->courses()->delete();
+        $student->delete();
+        return redirect()->route('student.index');
     }
 }
