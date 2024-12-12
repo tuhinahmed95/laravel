@@ -17,6 +17,19 @@ class AuthController extends Controller
         ]);
 
         $user = User::create($data);
+        return redirect()->route('login');
 
+    }
+
+    public function login (Request $request){
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+        return redirect()->route('dashboard');
+    }
+
+    public function dashboardPage(){
+        return view('dashboard');
     }
 }
