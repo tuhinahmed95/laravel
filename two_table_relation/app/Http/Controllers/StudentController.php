@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::with('courses')->get();
-        return view('');
+        return view('welcome',compact('students'));
     }
 
     /**
@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('createsc');
     }
 
     /**
@@ -29,7 +29,26 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'course_name'=>'required|',
+            'student_id'=>'required'
+        ]);
+
+        $student = Student::create([
+            'name'=>$validate=['name'],
+            'email'=>$validate=['email']
+        ]);
+
+        foreach($student ['courses'] as $course){
+            $student->courses()->create([
+                'course_name' => $course,
+                'student_id'=>$course
+            ]);
+        }
+
+        return redirect()->route('student.index');
     }
 
     /**
