@@ -19,22 +19,24 @@
                     <form action="{{ route('student.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <label for="name">Student Name</label>
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control">
+                            <label for="email">Student Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="course" class="form-label">Course</label>
-                            <input type="text" name="course" class="form-control">
+                            <label for="courses">Courses (comma-separated)</label>
+                            <input type="text" name="courses[]" id="courses" class="form-control" placeholder="Enter course names, separated by commas" required>
                         </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>
 
-                    <button class="btn btn-success">Submit</button>
+
                 </div>
             </div>
         </div>

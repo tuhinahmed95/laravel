@@ -19,29 +19,34 @@
                 <div class="card-body">
                     <a href="{{ route('student.create') }}" class="btn btn-success">Add New</a>
                     <table class="table table-striped">
-                        <tr>
-                            <th>Id</th>
-                            <th>Student_Name</th>
-                            <th>Email</th>
-                            <th>Course</th>
-                            <th>Student_Id</th>
-                        </tr>
-                        @foreach ($students as $student)
-                        <tr>
-                            <td>{{ $student->id }}</td>
-                            <td>{{ $student->name }}</td>
-                            <td>{{ $student->email }}</td>
-                            <td>
-                                <ul>
-                                    @foreach ($student->courses as $course)
-                                    <li>{{ $course->course_name }}</li>
-                                    <li>{{ $course->student_id }}</li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                        </tr>
-                        @endforeach
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Courses</th>
+                                <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($students as $student)
+                                <tr>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach($student->courses as $course)
+                                                <li>{{ $course->course_name }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
+
                 </div>
             </div>
         </div>

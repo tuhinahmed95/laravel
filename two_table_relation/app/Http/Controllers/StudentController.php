@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -12,8 +13,9 @@ class StudentController extends Controller
      */
     public function index()
     {
+        // Students সহ তাদের কোর্সগুলো দেখাবে
         $students = Student::with('courses')->get();
-        return view('welcome',compact('students'));
+        return view('welcome', compact('students'));
     }
 
     /**
@@ -29,26 +31,28 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate input data
         $validate = $request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'course_name'=>'required|',
-            'student_id'=>'required'
+            'name' => 'required',
+            'email' => 'required|email|unique:students,email',
+            'courses' => 'required|array',
+            'courses.*' => 'required|string', // কোর্সের নামগুলো
         ]);
 
+        // Student তৈরি
         $student = Student::create([
-            'name'=>$validate=['name'],
-            'email'=>$validate=['email']
+            'name' => $validate['name'],
+            'email' => $validate['email']
         ]);
 
-        foreach($student ['courses'] as $course){
+        // কোর্সগুলো ইনসার্ট
+        foreach ($validate['courses'] as $courseName) {
             $student->courses()->create([
-                'course_name' => $course,
-                'student_id'=>$course
+                'course_name' => $courseName,
             ]);
         }
 
-        return redirect()->route('student.index');
+        return redirect()->route('students.index');
     }
 
     /**
@@ -56,7 +60,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = Student::with('courses')->find($id);
+        return view('singlestudent',compact('student'));
     }
 
     /**
