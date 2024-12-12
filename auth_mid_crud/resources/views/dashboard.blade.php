@@ -17,7 +17,7 @@
                     <h1>DashBoard</h1>
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-success">UserCreate</a>
+                    <a href="{{ route('studnent.index') }}" class="btn btn-success">UserView</a>
                     <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
                 </div>
             </div>

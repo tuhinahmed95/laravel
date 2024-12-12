@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -11,7 +12,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        return view('homestudent',compact('students'));
     }
 
     /**
@@ -19,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('createstudent');
     }
 
     /**
@@ -27,7 +29,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $studentData = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'address'=>'required',
+            'city'=>'required',
+        ]);
+
+        Student::create($studentData);
+        return redirect()->route('studnent.index');
     }
 
     /**
@@ -35,7 +45,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $studnet = Student::find($id);
+        return view('studentview',compact('studnet'));
     }
 
     /**
@@ -43,7 +54,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('studentupdate',compact('student'));
     }
 
     /**
@@ -51,7 +63,16 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $studentUpdate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'address'=>'required',
+            'city'=>'required',
+        ]);
+
+        $student = Student::find($id);
+        $student->update($studentUpdate);
+        return redirect()->route('studnent.index');
     }
 
     /**
@@ -59,6 +80,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('studnent.index');
     }
 }
