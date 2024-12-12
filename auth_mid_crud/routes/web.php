@@ -19,4 +19,4 @@ Route::get('dashboard',[AuthController::class,'dashboardPage'])->name('dashboard
 
 Route::get('logout',[AuthController::class,'logout'])->name('logout');
 
-Route::resource('studnent',StudentController::class);
+Route::resource('studnent',StudentController::class)->middleware(AuthMiddleware::class);
