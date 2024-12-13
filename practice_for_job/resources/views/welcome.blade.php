@@ -15,7 +15,7 @@
                 <h1>All User Details</h1>
             </div>
             <div class="card-body">
-                <a href="{{ route() }}" class="btn btn-success">Add New</a>
+                <a href="{{ route('users.create') }}" class="btn btn-success">Add New</a>
                 <table class="table table-striped">
                     <tr>
                         <th>Id</th>
@@ -23,14 +23,14 @@
                         <th>Email</th>
                         <th>Password</th>
                     </tr>
-                    {{-- @foreach ($users as $user)
+                    @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->password }}</td>
                     </tr>
-                    @endforeach --}}
+                    @endforeach
                 </table>
             </div>
         </div>
