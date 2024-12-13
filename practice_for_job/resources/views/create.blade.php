@@ -17,7 +17,8 @@
                     <h1>User Create</h1>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="POST">
+                    <form action="{{ route('users.store') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control">
@@ -29,8 +30,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Password</label>
-                            <input type="password" name="name" class="form-control">
+                            <label for="age">Age</label>
+                            <input type="age" name="age" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="city" name="city" class="form-control">
                         </div>
                     </form>
                     <button class="btn bnt-success">Submit</button>

@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::all();
-        return view('welcome',compact('users'));
+        
     }
 
     /**
@@ -21,7 +19,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -29,14 +27,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'password'=>'required'
-        ]);
-
-        $user = User::create($validate);
-        return redirect()->route('users.index');
+        //
     }
 
     /**
@@ -52,8 +43,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = User::find($id);
-        return view('update',compact('user'));
+        //
     }
 
     /**
@@ -61,15 +51,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validate = $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'password'=>'required'
-        ]);
-
-        $user = User::find($id);
-        $user->update();
-        return redirect()->route('users.index');
+        //
     }
 
     /**
