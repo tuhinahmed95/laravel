@@ -2,11 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function register(){
-        return view('auth.register');
+    public function register(Request $request){
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required|confirmed'
+        ]);
+
+        $createdata = User::create($validate);
+        if(Auth::attempt($createdata)){
+            return redirect()->route('login');
+        }
+    }
+
+    public function login(Request $request){
+        $creadential = $request->validate([
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+        return redirect()->route('auth.dashboard');
+    }
+
+    public function dashboard(){
+        return view('auth.dashboard');
+    }
+
+    public function inner(){
+        return view('auth.inner');
     }
 }

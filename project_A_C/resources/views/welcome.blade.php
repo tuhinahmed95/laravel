@@ -15,6 +15,12 @@
                 <div class="card-header">
                     <h1>Home Page</h1>
                 </div>
+                <div class="card-body">
+                    <div>
+                        <a href="{{ route('register') }}" class="btn btn-success">Register</a>
+                        <button class="btn btn-secondary">Login</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
