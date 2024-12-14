@@ -37,8 +37,9 @@
                             <input type="password" name="password_confirmation" class="form-control">
                         </div>
                     </div>
+                    <button class="btn btn-success">Registration</button>
+                    <a href="/" class="btn btn-secondary">Back</a>
                 </form>
-                <button class="btn btn-success">Registration</button>
             </div>
         </div>
     </div>

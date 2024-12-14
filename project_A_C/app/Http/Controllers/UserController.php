@@ -17,7 +17,7 @@ class UserController extends Controller
 
         $createdata = User::create($validate);
         if(Auth::attempt($createdata)){
-            return redirect()->route('login');
+            return redirect()->route('auth.login');
         }
     }
 
@@ -26,7 +26,9 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required'
         ]);
-        return redirect()->route('auth.dashboard');
+        if(Auth::attempt($creadential)){
+             return redirect()->route('auth.dashboard');
+        }
     }
 
     public function dashboard(){
@@ -36,4 +38,8 @@ class UserController extends Controller
     public function inner(){
         return view('auth.inner');
     }
+
+    // public function logout(){
+
+    // }
 }
