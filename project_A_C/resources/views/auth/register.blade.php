@@ -16,6 +16,7 @@
                     <h1>Register Form</h1>
                 </div>
                 <form action="{{ route('registerMatch') }}" method="POST">
+                    @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name</label>
