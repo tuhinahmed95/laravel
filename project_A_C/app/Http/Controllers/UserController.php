@@ -16,9 +16,7 @@ class UserController extends Controller
         ]);
 
         $createdata = User::create($validate);
-        if(Auth::attempt($createdata)){
-            return redirect()->route('auth.login');
-        }
+        return redirect()->route('login');
     }
 
     public function login(Request $request){
@@ -27,7 +25,7 @@ class UserController extends Controller
             'password'=>'required'
         ]);
         if(Auth::attempt($creadential)){
-             return redirect()->route('auth.dashboard');
+             return redirect()->route('dashboard');
         }
     }
 
