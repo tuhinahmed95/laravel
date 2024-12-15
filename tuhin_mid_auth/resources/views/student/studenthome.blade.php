@@ -15,4 +15,5 @@ All Student Details
             <th>City</th>
         </tr>
     </table>
+    <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
 @endsection

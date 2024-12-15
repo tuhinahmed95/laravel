@@ -14,7 +14,7 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required|confirmed'
         ]);
-        
+
         // $usercreate = User::create($validate);
         $userdata = User::create([
             'name'=>$request->name,
@@ -41,5 +41,10 @@ class UserController extends Controller
 
     public function studentPage(){
         return view('auth.studenthome');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return view('auth.login');
     }
 }

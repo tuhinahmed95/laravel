@@ -16,7 +16,7 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" name="password" class="form-control">
     </div>
-    <button class="btn btn-success">Login</button>
-    <a href="/" class="btn btn-secondary">Back</a>
+    <button class="btn btn-success mt-2">Login</button>
+    <a href="/" class="btn btn-secondary mt-2">Back</a>
 </form>
 @endsection
