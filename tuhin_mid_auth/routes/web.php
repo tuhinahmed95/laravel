@@ -21,4 +21,9 @@ Route::get('dashboard',[UserController::class,'dashboard'])->name('dashboard')->
 Route::get('logout',[UserController::class,'logout'])->name('logout')->middleware(UserValid::class);
 
 Route::view('student.studenthome','student.studenthome')->name('student.studenthome');
-Route::post('student/create',[StudentController::class,'create'])->name('create');
+Route::get('student.create',[StudentController::class,'create'])->name('student.create');
+Route::post('student.store',[StudentController::class,'create'])->name('student.store');
+Route::get('student.show',[StudentController::class,'create'])->name('student.show');
+Route::get('student.edit',[StudentController::class,'create'])->name('student.edit');
+Route::post('student.update',[StudentController::class,'create'])->name('student.update');
+Route::get('student.destroy',[StudentController::class,'create'])->name('student.destroy');
