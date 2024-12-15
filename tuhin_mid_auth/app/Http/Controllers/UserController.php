@@ -17,4 +17,8 @@ class UserController extends Controller
         $userdata = User::create($validate);
         return redirect()->route('login');
     }
+
+    public function login(Request $request){
+        
+    }
 }
