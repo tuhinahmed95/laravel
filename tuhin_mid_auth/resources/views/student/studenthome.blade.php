@@ -5,7 +5,7 @@ All Student Details
 @endsection
 
 @section('content')
-    <a href="#" class="btn btn-success">Add New</a>
+    <a href="{{ route('student.create') }}" class="btn btn-success">Add New</a>
     <table class="table table-striped">
         <tr>
             <th>Roll</th>
