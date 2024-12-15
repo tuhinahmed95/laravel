@@ -2,16 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function studentHome(){
+        $students = 
+    }
     public function create(){
         return view('student.create');
     }
 
-    public function store(){
+    public function store(Request $request){
+        $validate = $request->validate([
+            'roll'=>'required',
+            'name'=>'required',
+            'age'=>'required',
+            'gpa'=>'required',
+            'city'=>'required'
+        ]);
 
+        $create = Student::create($validate);
+        return redirect()->route('student.studenthome');
     }
 
     public function show(){
