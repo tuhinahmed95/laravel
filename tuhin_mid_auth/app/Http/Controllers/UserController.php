@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -19,6 +20,21 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-        
+        $credintial = $request->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        if(Auth::attempt($credintial)){
+            return redirect()->route('dashboard');
+        }
+    }
+
+    public function dashboard(){
+        return view('auth.dashboard');
+    }
+
+    public function studentPage(){
+        return view('auth.studenthome');
     }
 }
