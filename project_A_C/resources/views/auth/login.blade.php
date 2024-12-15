@@ -18,10 +18,6 @@
                 <form action="{{ route('loginMatch') }}" method="POST">
                     @csrf
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control">
-                        </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -33,12 +29,9 @@
                             <input type="password" name="password" class="form-control">
                         </div>
 
-                        <div class="form-group">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" name="password_confirmation" class="form-control">
-                        </div>
+
                     </div>
-                    <button class="btn btn-success">Registration</button>
+                    <button class="btn btn-success">Login</button>
                     <a href="/" class="btn btn-secondary">Back</a>
                 </form>
             </div>
