@@ -14,9 +14,14 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required|confirmed'
         ]);
-
-        $userdata = User::create($validate);
-        return redirect()->route('login');
+        
+        // $usercreate = User::create($validate);
+        $userdata = User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password
+        ]);
+        return redirect()->route('auth.login');
     }
 
     public function login(Request $request){

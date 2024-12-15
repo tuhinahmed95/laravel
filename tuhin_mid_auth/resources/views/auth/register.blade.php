@@ -24,7 +24,7 @@
 
     <div class="form-gropu">
         <label for="password" class="form-label">Pasword Confirmation</label>
-        <input type="password" class="form-control" name="password_confiramtion">
+        <input type="password" class="form-control" name="password_confirmation">
     </div>
     <button class="btn btn-success mt-2">Registration</button>
     <a href="/" class="btn btn-secondary mt-2">Back</a>

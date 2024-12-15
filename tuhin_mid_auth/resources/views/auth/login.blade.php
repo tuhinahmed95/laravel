@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<form action="{{ route('dashboard') }}" method="POST">
+<form action="{{ route('loginMatch') }}" method="POST">
     @csrf
     <div class="form-group">
         <label for="email" class="form-label">Email</label>
