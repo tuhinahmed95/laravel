@@ -20,7 +20,7 @@ Route::get('dashboard',[UserController::class,'dashboard'])->name('dashboard')->
 
 Route::get('logout',[UserController::class,'logout'])->name('logout')->middleware(UserValid::class);
 
-Route::view('student.studenthome','student.studenthome')->name('student.studenthome');
+Route::get('student.studenthome',[StudentController::class,'studentHome'])->name('student.studenthome');
 Route::get('student.create',[StudentController::class,'create'])->name('student.create');
 Route::post('student.store',[StudentController::class,'create'])->name('student.store');
 Route::get('student.show',[StudentController::class,'create'])->name('student.show');

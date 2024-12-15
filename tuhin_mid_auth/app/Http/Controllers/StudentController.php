@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function studentHome(){
-        $students = 
+        $students = Student::all();
+        return view('student.studenthome',compact('students'));
     }
     public function create(){
         return view('student.create');

@@ -14,6 +14,16 @@ All Student Details
             <th>GPA</th>
             <th>City</th>
         </tr>
+
+        @foreach ($students as $student)
+        <tr>
+            <td>{{ $student->roll }}</td>
+            <td>{{ $student->name }}</td>
+            <td>{{ $student->age }}</td>
+            <td>{{ $student->gpa }}</td>
+            <td>{{ $student->city }}</td>
+        </tr>
+        @endforeach
     </table>
     <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
 @endsection
