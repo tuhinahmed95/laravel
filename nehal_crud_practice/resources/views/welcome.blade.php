@@ -25,6 +25,9 @@ Al Student Details
         <td>{{ $student->email }}</td>
         <td>{{ $student->age }}</td>
         <td>{{ $student->city }}</td>
+        <td>
+            <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+        </td>
     </tr>
     @endforeach
 </table>
