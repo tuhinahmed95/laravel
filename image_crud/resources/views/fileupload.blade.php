@@ -30,10 +30,10 @@
                 </div> --}}
 
                 <div class="form-group">
-                    <label for="photo" class="form-label">FileUpload</label>
-                    <input type="file" name="photo" class="form-control" accept="images/*">
+                    <label for="image" class="form-label">FileUpload</label>
+                    <input type="file" name="image" class="form-control" accept="images/*">
 
-                    @error('photo')
+                    @error('image')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
 

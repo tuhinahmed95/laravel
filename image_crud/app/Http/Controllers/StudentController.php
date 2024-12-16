@@ -28,12 +28,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('photo');
         $request->validate([
-            'photo'=>'required|mimes:png,jpg,jpeg|max:5000'
+            'image'=>'required|mimes:png,jpg,jpeg|max:5000'
         ]);
 
-        $path = $request->file('photo')->store('images','public');
+        // $file = $request->file('image');
+
+        $path = $request->file('image')->store('images','public');
+        Student::create([
+            'image'=>$request->$path
+        ]);
         return redirect()->route('student.index')->with('status','Student Image Upload Successfully');
     }
 
