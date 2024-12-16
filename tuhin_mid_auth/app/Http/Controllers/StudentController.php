@@ -24,7 +24,7 @@ class StudentController extends Controller
             'city'=>'required'
         ]);
 
-        $create = Student::create($validate);
+        Student::create($validate);
         return redirect()->route('student.studenthome');
     }
 
