@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -11,7 +12,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return view('fileupload');
     }
 
     /**
@@ -27,7 +28,13 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('photo');
+        $request->validate([
+            'photo'=>'required|mimes:png,jpg,jpeg|max:5000'
+        ]);
+
+        $path = $request->file('photo')->store('image','public');
+        return redirect()->route('student.index')->with('status','Student Image Upload Successfully');
     }
 
     /**

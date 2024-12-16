@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-sm-6">
             <a href="" class="btn btn-success">Add New</a>
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 {{-- <div class="form-group">
                     <label for="name" class="form-label">Name</label>
@@ -36,7 +36,7 @@
                     @error('photo')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
-                    
+
                 </div>
             </form>
         </div>
