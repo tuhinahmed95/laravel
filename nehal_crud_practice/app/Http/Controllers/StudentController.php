@@ -29,7 +29,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'age'=>'required',
+            'city'=>'required',
+        ]);
+
+        Student::create($validate);
+        return redirect()->route('student.index');
     }
 
     /**

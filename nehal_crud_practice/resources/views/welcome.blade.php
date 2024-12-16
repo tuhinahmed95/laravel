@@ -5,6 +5,7 @@ Al Student Details
 @endsection
 
 @section('content')
+<a href="{{ route('student.create') }}" class="btn btn-success">Add New</a>
 <table class="table table-striped">
     <tr>
         <th>Id</th>
@@ -16,5 +17,15 @@ Al Student Details
         <th>Edit</th>
         <th>Delete</th>
     </tr>
+
+    @foreach ($students as $student)
+    <tr>
+        <td>{{ $student->id }}</td>
+        <td>{{ $student->name }}</td>
+        <td>{{ $student->email }}</td>
+        <td>{{ $student->age }}</td>
+        <td>{{ $student->city }}</td>
+    </tr>
+    @endforeach
 </table>
 @endsection
