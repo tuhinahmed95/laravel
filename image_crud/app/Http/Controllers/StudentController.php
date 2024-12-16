@@ -33,7 +33,7 @@ class StudentController extends Controller
             'photo'=>'required|mimes:png,jpg,jpeg|max:5000'
         ]);
 
-        $path = $request->file('photo')->store('image','public');
+        $path = $request->file('photo')->store('images','public');
         return redirect()->route('student.index')->with('status','Student Image Upload Successfully');
     }
 
