@@ -71,7 +71,7 @@ class StudentController extends Controller
         ]);
 
         $student = Student::find($id);
-        $student->update();
+        $student->update($validate);
         return redirect()->route('student.index');
     }
 

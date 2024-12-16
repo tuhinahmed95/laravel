@@ -33,6 +33,7 @@ Al Student Details
         </td>
         <td>
             <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                @csrf
                 @method('DELETE')
                 <button class="btn btn-danger">Delete</button>
             </form>
