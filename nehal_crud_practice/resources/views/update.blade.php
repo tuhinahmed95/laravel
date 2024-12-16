@@ -27,6 +27,6 @@
         <label for="city" class="from-label">City</label>
         <input type="text" name="city" class="form-control" value="{{ $student->city }}">
     </div>
-    <button class="btn btn-success mt-2">StudentCreate</button>
+    <button class="btn btn-success mt-2">UpdateStudent</button>
 </form>
 @endsection

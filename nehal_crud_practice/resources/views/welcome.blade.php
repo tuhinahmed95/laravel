@@ -28,6 +28,15 @@ Al Student Details
         <td>
             <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
         </td>
+        <td>
+            <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Edit</a>
+        </td>
+        <td>
+            <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                @method('DELETE')
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </td>
     </tr>
     @endforeach
 </table>
