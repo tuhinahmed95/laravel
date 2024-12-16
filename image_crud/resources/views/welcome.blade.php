@@ -18,7 +18,8 @@
         <div class="col-sm-6">
             <a href="" class="btn btn-success">Add New</a>
             <form action="#" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
+                @csrf
+                {{-- <div class="form-group">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control">
                 </div>
@@ -26,13 +27,31 @@
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" class="form-control">
-                </div>
+                </div> --}}
 
                 <div class="form-group">
-                    <label for="file" class="form-label">FileUpload</label>
-                    <input type="file" name="phptp" class="form-control" accept="images/*">
+                    <label for="photo" class="form-label">FileUpload</label>
+                    <input type="file" name="photo" class="form-control" accept="images/*">
+
+                    @error('photo')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                    
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            @if (session('status'))
+            <div class="alert alert-success">{{ sesion('status') }}</div>
+            @endif
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+
         </div>
     </div>
 </div>
