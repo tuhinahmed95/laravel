@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-sm-6">
             <a href="" class="btn btn-success">Add New</a>
-            <form action="#" method="POST">
+            <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control">
@@ -30,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="file" class="form-label">FileUpload</label>
-                    <input type="file" name="file" class="form-control">
+                    <input type="file" name="phptp" class="form-control" accept="images/*">
                 </div>
             </form>
         </div>
