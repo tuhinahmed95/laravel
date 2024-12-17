@@ -29,6 +29,9 @@
                         <th>Email</th>
                         <th>Age</th>
                         <th>Image</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     @foreach ($students as $student)
                     <tr>
@@ -40,6 +43,19 @@
                             @if ($student->image)
                                 <img src="{{ asset('uploads/'. $student->image) }}" alt="" width="100">
                             @endif
+                        </td>
+                        <td>
+                            <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+                        </td>
+                        <td>
+                            <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Edit</a>
+                        </td>
+                        <td>
+                            <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
