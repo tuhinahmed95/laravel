@@ -27,7 +27,8 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card-body">
-                <form action="{{ route('student.store') }}" method="POST">
+                <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" name="name" class="form-control">
@@ -39,7 +40,7 @@
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control">
-                        @error('name')
+                        @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -47,7 +48,7 @@
                     <div class="form-group">
                         <label for="age" class="form-label">Age</label>
                         <input type="number" name="age" class="form-control">
-                        @error('name')
+                        @error('age')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -55,7 +56,7 @@
                     <div class="form-group">
                         <label for="image" class="form-label">Image</label>
                         <input type="file" name="image" class="form-control">
-                        @error('name')
+                        @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>

@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view('welcome',compact('students'));
+        return view('index',compact('students'));
     }
 
     /**
@@ -37,9 +37,9 @@ class StudentController extends Controller
         ]);
 
         if($request->hasFile('image')){
-             $image = $request()->file('image');
+             $image = $request->file('image');
              $imageName = time().'_'. $image->getClientOriginalName();
-             $image->move(public_path('uploads').$imageName);
+             $image->move(public_path('uploads'),$imageName);
 
         }
 
