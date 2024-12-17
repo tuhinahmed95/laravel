@@ -31,25 +31,45 @@
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" name="name" class="form-control">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="age" class="form-label">Age</label>
                         <input type="number" name="age" class="form-control">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="image" class="form-label">Image</label>
                         <input type="file" name="image" class="form-control">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button class="btn btn-success btn btn-sm mt-2">CreateStudent</button>
                 </form>
+
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            @if (session('status'))
+             <div class="alert alert-success">{{ session('status') }}</div>
+            @endif
         </div>
     </div>
 </div>

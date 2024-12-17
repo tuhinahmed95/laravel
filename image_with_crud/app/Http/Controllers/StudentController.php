@@ -37,6 +37,12 @@ class StudentController extends Controller
         ]);
 
         $image = $request()->file('image');
+        Student::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'image'=>$request->image,
+        ]);
     }
 
     /**
