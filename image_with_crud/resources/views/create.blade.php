@@ -68,7 +68,7 @@
     <div class="row">
         <div class="col-6">
             @if (session('status'))
-             <div class="alert alert-success">{{ session('status') }}</div>
+             <div class="alert alert-success mt-1 mb-1">{{ session('status') }}</div>
             @endif
         </div>
     </div>

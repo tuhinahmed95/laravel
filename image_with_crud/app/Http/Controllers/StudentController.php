@@ -32,17 +32,25 @@ class StudentController extends Controller
         $validate = $request->validate([
             'name'=>'required',
             'email'=>'required|email',
-            'age'=>'required',
+            'age'=>'required|integer',
             'image'=>'required|mimes:png,jpg,jpeg|max:5000'
         ]);
 
-        $image = $request()->file('image');
+        if($request->hasFile('image')){
+             $image = $request()->file('image');
+             $imageName = time().'_'. $image->getClientOriginalName();
+             $image->move(public_path('uploads').$imageName);
+
+        }
+
         Student::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'age'=>$request->age,
-            'image'=>$request->image,
+            'image'=>$imageName,
         ]);
+
+        return redirect()->route('student.index')->with('status','Student Create Successfully');
     }
 
     /**
