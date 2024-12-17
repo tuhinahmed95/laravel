@@ -17,8 +17,13 @@
                     <h3 class="text-center bg-success">Student Create</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('student.store') }}" method="POST">
+                    <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+
+                        @if (session('status'))
+                         <div class="alert alert-success">{{ session('status') }}</div>
+                        @endif
+
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control">
@@ -46,7 +51,7 @@
                         <div class="form-group">
                             <label for="image" class="form-label">Image</label>
                             <input type="file" name="image" class="form-control">
-                            @error('name')
+                            @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
