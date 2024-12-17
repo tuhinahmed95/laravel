@@ -29,6 +29,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'age'=>'required|integer',
+            'image'=>'required|mimes:png,jpg,jpeg|max:7000',
+            'city'=>'required',
+        ]);
+
         
     }
 
