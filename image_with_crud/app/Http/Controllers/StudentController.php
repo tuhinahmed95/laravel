@@ -67,7 +67,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('update',compact('student'));
     }
 
     /**
@@ -75,7 +76,26 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'age'=>'required|integer',
+            'image'=>'nullable|mimes:png,jpg,pjeg|max:5000',
+        ]);
+        $students = Student::find($id);
+        if($request->hasFile('image')){
+            if($students->image && file_exists(public_path('uploads/'. $students->image))){
+                unlink(public_path('uploads/'. $students->image));
+            }
+            $image = $request->file('image');
+            $imageName = time(). '_'. $image->getClientOriginalName();
+            $image->move(public_path('uploads'),$imageName);
+            $validate['image']= $imageName;
+        }else{
+            $validate['image'] = $students->image;
+        }
+        $students->update($validate);
+        return redirect()->route('student.index')->with('status','Student Update Successfull');
     }
 
     /**
@@ -83,6 +103,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('student.index')->with('status','Student Delete Successfully');
     }
 }
