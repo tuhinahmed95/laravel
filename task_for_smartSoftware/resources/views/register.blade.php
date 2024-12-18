@@ -65,6 +65,12 @@
                         </div>
                         <button class="btn btn-success mt-2">Register</button>
                     </form>
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+
+                        @endif
                 </div>
             </div>
         </div>
