@@ -29,7 +29,28 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'age'=>'required|integer',
+            'image'=>'required|mimes:png,jpg,jpeg|max:7000',
+            'city'=>'required'
+        ]);
+
+        if($request->hasFile('image')){
+            $image = $request->File('image');
+            $imageName = time(). '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads'),$imageName);
+        }
+        Student::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'age'=>$request->age,
+            'image'=>$imageName,
+            'city'=>$request->city
+        ]);
+
+        return redirect()->route('student.index');
     }
 
     /**
