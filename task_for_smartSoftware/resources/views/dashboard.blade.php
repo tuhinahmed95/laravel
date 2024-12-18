@@ -12,14 +12,14 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">DashBoard</h1>
+            <h1 class="text-center bg-info">DashBoard</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    <h3>This Is A DashBoard</h3>
+                    <h3 class="text-center">This Is A DashBoard</h3>
                 </div>
                 <div class="card-body">
                     <button class="btn btn-success">StudentForm</button>

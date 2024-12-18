@@ -12,3 +12,5 @@ Route::post('registerMatch',[UserController::class,'register'])->name('registerM
 
 Route::view('login','login')->name('login');
 Route::post('loginMatch',[UserController::class,'login'])->name('loginMatch');
+
+Route::get('dashboard',[UserController::class,'dashBoard'])->name('dashboard');
