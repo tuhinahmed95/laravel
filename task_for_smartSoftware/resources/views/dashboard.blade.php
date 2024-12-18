@@ -22,7 +22,7 @@
                     <h3 class="text-center">This Is A DashBoard</h3>
                 </div>
                 <div class="card-body">
-                    <button class="btn btn-success">StudentForm</button>
+                    <a href="{{ route('student.index') }}" class="btn btn-success">StudentDetailsTable</a>
                     <a href="/" class="btn btn-danger">Back</a>
                 </div>
             </div>

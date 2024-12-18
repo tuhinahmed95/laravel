@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center mt-2 bg-success">Home Page</h1>
+            <h1 class="text-center mt-2 bg-success p-3">Home Page</h1>
         </div>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div>
                         <a href="{{ route('register') }}" class="btn btn-success">RegisteForm</a>
-                        <button class="btn btn-secondary">Login</button>
+                        <a href="{{ route('login') }}" class="btn btn-secondary">LogIn</a>
                     </div>
                 </div>
             </div>
