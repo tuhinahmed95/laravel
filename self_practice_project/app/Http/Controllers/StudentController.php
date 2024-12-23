@@ -76,8 +76,9 @@ class StudentController extends Controller
             'name'=>'required|string',
             'email'=>'required|email',
             'image'=>'required|mimes:png,jpg,jpeg|max:7000',
-            'city'=>'required|string'
+            'city'=>'nullable|string'
         ]);
+
         $student = Student::find($id);
         if($request->hasFile('image')){
             if($student->image && file_exists('uploads/'. $student->image)){
@@ -87,7 +88,16 @@ class StudentController extends Controller
             $image = $request->file('image');
             $imagePath = time(). '_'. $image->getClientOriginalName();
             $image->move(public_path('uploads'),$imagePath);
+            $student->image = $imagePath;
         }
+        $student->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'image'=>$imagePath,
+            'city'=>$request->city,
+        ]);
+        return redirect()->route('student.index');
+
     }
 
     /**
@@ -95,6 +105,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('student.index');
     }
 }
