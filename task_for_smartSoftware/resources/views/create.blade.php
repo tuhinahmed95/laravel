@@ -50,6 +50,7 @@
                             <input type="text" name="city" class="form-control">
                         </div>
                         <button class="btn btn-success mt-2">Submit</button>
+                        <a href="{{ route('student.index') }}" class="btn btn-info mt-2">BackIndex</a>
                     </form>
 
                 </div>

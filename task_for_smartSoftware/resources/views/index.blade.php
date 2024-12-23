@@ -64,6 +64,7 @@
 
                             @endforeach
                         </table>
+                        <a href="{{ route('login') }}" class="btn btn-danger">LogOut</a>
                     </div>
                 </div>
             </div>
