@@ -22,8 +22,10 @@
                     <h4>GoToNextPage</h4>
                 </div>
                 <div class="card-body">
-                    <a href="" class="btn btn-success">GoToNext</a>
-                    <button class="btn btn-danger">LogOut</button>
+                    <div>
+                        <a href="{{ route('student.index') }}" class="btn btn-success">GoToNext</a>
+                        <button class="btn btn-danger">LogOut</button>
+                    </div>
                 </div>
             </div>
            </div>
