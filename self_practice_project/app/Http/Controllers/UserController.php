@@ -17,4 +17,20 @@ class UserController extends Controller
         User::create($validate);
         return view('login');
     }
+
+    public function login(Request $request){
+
+    }
+
+    public function dashBoard(){
+
+    }
+
+    public function innerPage(){
+
+    }
+
+    public function logout(){
+        
+    }
 }

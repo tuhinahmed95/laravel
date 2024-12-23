@@ -16,7 +16,7 @@
                 <h1 class="bg-success text-center mt-3 p-3">Home Page</h1>
             </div>
             <div class="card-body">
-                <a href="" class="btn btn-success">Registration</a>
+                <a href="{{ route('register') }}" class="btn btn-success">Registration</a>
                 <a href="" class="btn btn-warning">Login</a>
             </div>
            </div>
