@@ -35,17 +35,30 @@
                                 <th>Delete</th>
                             </tr>
 
-                            {{-- @foreach ($students as $student)
+                            @foreach ($students as $student)
                             <tr>
                                 <td>{{ $student->id }}</td>
-                                <td>{{ $student->id }}</td>
-                                <td>{{ $student->id }}</td>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->email }}</td>
                                 <td>
-
+                                    <img src="{{ asset('uploads/'.$student->image) }}" alt="" width="100">
                                 </td>
-                                <td>{{ $student->id }}</td>
+                                <td>{{ $student->city }}</td>
+                                <td>
+                                    <a href="{{ route('student.show',$student->id) }}" class="btn btn-warning">View</a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('student.edit',$student->id) }}" class="btn btn-success">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('student.destroy',$student->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </table>
                     </div>
                 </div>

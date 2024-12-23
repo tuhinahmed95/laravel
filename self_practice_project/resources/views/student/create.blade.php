@@ -54,9 +54,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name" class="form-labek">Name</label>
-                            <input type="text" name="name" class="form-control">
-                            @error('name')
+                            <label for="city" class="form-labek">City</label>
+                            <input type="text" name="city" class="form-control">
+                            @error('city')
                                 <div class="alert alert-danger">
                                     {{ $message }}
                                 </div>
