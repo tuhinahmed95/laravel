@@ -16,7 +16,17 @@
             </div>
         </div>
         <div class="row">
-            
+           <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>GoToNextPage</h4>
+                </div>
+                <div class="card-body">
+                    <a href="" class="btn btn-success">GoToNext</a>
+                    <button class="btn btn-danger">LogOut</button>
+                </div>
+            </div>
+           </div>
         </div>
     </div>
 </body>

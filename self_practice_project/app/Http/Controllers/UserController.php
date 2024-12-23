@@ -37,7 +37,9 @@ class UserController extends Controller
         return view('auth.inner');
     }
 
-    public function logout(){
-
+    public function logout($id){
+        $user = User::find($id);
+        $user->logout();
+        return redirect()->route('login');
     }
 }
