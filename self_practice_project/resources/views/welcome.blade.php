@@ -17,7 +17,7 @@
             </div>
             <div class="card-body">
                 <a href="{{ route('register') }}" class="btn btn-success">Registration</a>
-                <a href="" class="btn btn-warning">Login</a>
+                <a href="{{ route('login') }}" class="btn btn-warning">Login</a>
             </div>
            </div>
         </div>

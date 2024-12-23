@@ -9,6 +9,15 @@
 
 </head>
 <body>
-
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-light bg-success">Inner Page</h1>
+            </div>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
 </body>
 </html>
