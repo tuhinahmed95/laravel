@@ -32,7 +32,8 @@ class StudentController extends Controller
         $validate = $request->validate([
             'name'=>'required|string',
             'email'=>'required|email',
-            'image'=>'required|mimes:png,jpg,jpeg|max:7000'
+            'image'=>'required|mimes:png,jpg,jpeg|max:7000',
+            'city'=>'required|string'
         ]);
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -62,7 +63,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('student.update',compact('student'));
     }
 
     /**
@@ -70,7 +72,22 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'name'=>'required|string',
+            'email'=>'required|email',
+            'image'=>'required|mimes:png,jpg,jpeg|max:7000',
+            'city'=>'required|string'
+        ]);
+        $student = Student::find($id);
+        if($request->hasFile('image')){
+            if($student->image && file_exists('uploads/'. $student->image)){
+                unlink(public_path('uploads/'.$student->image));
+            }
+
+            $image = $request->file('image');
+            $imagePath = time(). '_'. $image->getClientOriginalName();
+            $image->move(public_path('uploads'),$imagePath);
+        }
     }
 
     /**
