@@ -62,6 +62,7 @@
                                 </div>
                             @enderror
                         </div>
+                        <button class="btn btn-success mt-2">Submit</button>
                     </form>
                 </div>
             </div>

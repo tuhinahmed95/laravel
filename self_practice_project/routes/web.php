@@ -7,11 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('register','register')->name('register');
-Route::post('registerSave',[UserController::class,'register'])->name('register');
+Route::view('auth/register','auth.register')->name('register');
+Route::post('registerSave',[UserController::class,'register'])->name('registerSave');
 
-Route::view('login','login')->name('login');
-Route::post('loginSave',[UserController::class,'login'])->name('registerSave');
+Route::view('auth/login','auth.login')->name('login');
+Route::post('loginSave',[UserController::class,'login'])->name('loginSave');
 
 Route::get('dashboard',[UserController::class,'dashBoard'])->name('dashboard');
 Route::get('dashboard/inner',[UserController::class,'innerPage'])->name('inner');

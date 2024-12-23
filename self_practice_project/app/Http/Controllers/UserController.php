@@ -15,22 +15,25 @@ class UserController extends Controller
         ]);
 
         User::create($validate);
-        return view('login');
+        return redirect()->route('login');
     }
 
     public function login(Request $request){
-
+        $creadential = $request->validate([
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
     }
 
     public function dashBoard(){
-
+        return view('auth.dashboard');
     }
 
     public function innerPage(){
-
+        return view('auth.inner');
     }
 
     public function logout(){
-        
+
     }
 }
