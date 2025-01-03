@@ -23,4 +23,5 @@ require __DIR__.'/auth.php';
 // user
 
 Route::get('user/update',[UserController::class,'user_update'])->name('user.update');
+Route::post('user/info/update',[UserController::class,'user_info_update'])->name('user.info.update');
 

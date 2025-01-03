@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('user.update') }}" method="POST">
+    <form action="{{ route('user.info.update') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
         </div>
 
         <div class="form-group">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ Auth::user()->email }}">
         </div>
     </form>
 </div>
