@@ -7,6 +7,10 @@
     <title>DashBoard Page</title>
 </head>
 <body>
-    @yield('content')
+    @extends('layouts.admin')
+    @section('content')
+    <h1>Dashboard Page</h1>
+
+    @endsection
 </body>
 </html>

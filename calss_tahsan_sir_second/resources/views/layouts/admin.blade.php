@@ -9,9 +9,7 @@
 <body>
     <h3>Header Section</h3>
 
-    @section('content')
-    <h3>i come from dashboard</h3>
-    @endsection
+    @yield('content')
     <h3>Footer Section</h3>
 
 </body>
