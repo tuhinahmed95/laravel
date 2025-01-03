@@ -15,9 +15,6 @@
         </div>
     </div>
     <div>
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <a href="{{ route('logout') }}">Logout</a>
-        </form>
+       
     </div>
 </x-app-layout>
