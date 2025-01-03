@@ -10,7 +10,5 @@ class AdminController extends Controller
         return view('dashboard');
     }
 
-    function about(){
-        return view('profile.about');
-    }
+   
 }
