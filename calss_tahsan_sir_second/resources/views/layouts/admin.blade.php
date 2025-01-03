@@ -12,14 +12,14 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('backend') }}/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend') }}/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="{{ asset('backend') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend') }}/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="{{ asset('backend') }}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend') }}/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -608,7 +608,7 @@
             <div class="main-content">
 
                 <div class="page-content">
-                    <div class="container-fluid">
+                    {{-- <div class="container-fluid">
 
                         <!-- start page title -->
                         <div class="row">
@@ -1288,7 +1288,7 @@
                         <!-- end row -->
 
 
-                    </div> <!-- container-fluid -->
+                    </div> <!-- container-fluid --> --}}
                 </div>
                 <!-- End Page-content -->
 
