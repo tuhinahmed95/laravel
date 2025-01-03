@@ -17,6 +17,6 @@ Route::post('loginSave',[UserController::class,'login'])->name('loginSave');
 Route::get('dashboard',[UserController::class,'dashBoard'])->name('dashboard');
 Route::get('dashboard/inner',[UserController::class,'innerPage'])->name('inner');
 
-Route::get('logout/{id}',[UserController::class,'logout'])->name('logout');
+Route::get('logout',[UserController::class,'logout'])->name('logout');
 
 Route::resource('student',StudentController::class);
