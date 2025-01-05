@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('user.info.update') }}" method="POST">
+    <form action="" method="POST">
         @csrf
         <div class="form-group">
             <label for="name" class="form-label">Name</label>
