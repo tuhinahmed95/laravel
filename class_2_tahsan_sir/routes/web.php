@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [HomeController::class,'dashboard']);
+Route::get('/dashboard/about', [HomeController::class,'about']);
 
 
 Route::middleware('auth')->group(function () {

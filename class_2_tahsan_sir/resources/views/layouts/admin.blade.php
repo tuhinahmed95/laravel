@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Header part</h1>
+    @yield('content')
+    <h1>Footer part</h1>
 </body>
 </html>
