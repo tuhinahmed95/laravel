@@ -8,8 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [HomeController::class,'dashboard']);
-Route::get('/dashboard/about', [HomeController::class,'about']);
+Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth','verified')->name('dashboard');
+
+Route::get('/about', [HomeController::class,'about']);
 
 
 Route::middleware('auth')->group(function () {

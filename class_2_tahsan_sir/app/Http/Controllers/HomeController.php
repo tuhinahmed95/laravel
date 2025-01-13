@@ -10,7 +10,5 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
-    function about(){
-        return view('layouts.about');
-    }
+   
 }
