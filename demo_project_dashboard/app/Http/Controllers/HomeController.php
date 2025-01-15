@@ -11,8 +11,8 @@ class HomeController extends Controller
         return view("layouts.admin.master");
     }
     public function UserList(Request $request) {
-        $usersxxx = User::latest()->first();
-    //    return  $usersxxx;
-        return view("page.user_list", compact('usersxxx'));
+        $users = User::latest()->first();
+    //
+        return view("page.user_list", compact('users'));
     }
 }

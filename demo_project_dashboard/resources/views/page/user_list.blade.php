@@ -35,37 +35,13 @@
                                         <th>Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                   @foreach ($usersxxx as $aa)
-                                   {{ $aa }}
-
-                                   @endforeach
-                                    @foreach ($usersxxx as $user)
-
-                                    <tr>
-                                        <td>
-                                            <h5 class="m-0 fw-normal">1</h5>
-                                        </td>
-
-                                        <td>
-                                            {{ $user }}
-                                        </td>
-
-                                        <td>
-                                            04332222244
-                                        </td>
-
-                                        <td>
-                                            24-12-2024
-                                        </td>
-
-                                        <td>
-                                            active
-                                        </td>
-                                    </tr>
-                                    @endforeach
-
-                                </tbody>
+                               <tbody>
+                                @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                </tr>
+                                @endforeach
+                               </tbody>
                             </table>
                         </div> <!-- end .table-responsive-->
                     </div>
