@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('/admin')->group(function(){
     Route::get('dashboard',[UserController::class,'dashboard'])->name('admin.dashboard');
     Route::get('dashboard/user',[UserController::class,'user'])->name('admin.userList');
+    Route::get('dashboard/edit/{id}',[UserController::class,'edit'])->name('admin.userEdit');
 });
 
 
