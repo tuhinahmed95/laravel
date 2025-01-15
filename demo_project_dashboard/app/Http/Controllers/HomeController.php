@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function Dashboard(Request $request) {
+    public function Dashboard() {
         return view("layouts.admin.master");
     }
     public function UserList(Request $request) {
         $users = User::latest()->first();
     //
         return view("page.user_list", compact('users'));
+    }
+
+    public function edit(){
+        return view('page.edit');
     }
 }

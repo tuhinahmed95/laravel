@@ -19,9 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::prefix("/admin")->group(function(){
-    Route::get("/dashboard",[HomeController::class, 'Dashboard'])->name('admin.dashboard');
-    Route::get("/users/manage",[HomeController::class, 'UserList'])->name('admin.UserList');
+Route::prefix("/admin")->name('admin.')->group(function(){
+    Route::get("/dashboard",[HomeController::class, 'Dashboard'])->name('dashboard');
+    Route::get("/users/manage",[HomeController::class, 'UserList'])->name('UserList');
+    Route::get("/users/edit",[HomeController::class, 'edit'])->name('edit');
 
 });
 
